@@ -7,20 +7,8 @@ const ilorm = require('ilorm');
 ```
 
 ### Exported class
-#### Ilorm.Model
-[See Model](#model)
-```javascript
-const { Model } = require('ilorm');
-```
-
-#### Ilorm.Query
-[See Query](#query)
-```javascript
-const { Query } = require('ilorm');
-```
-
 #### Ilorm.Schema
-[See Schema](#schema)
+Use to declare your schema. [See Schema](#schema)
 ```javascript
 const { Schema } = require('ilorm');
 ```
@@ -36,7 +24,7 @@ ilorm.declareModel(name, Model);
 | Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | name | String | The name associated with the given model. |
-| Model | Model | The Model to associate with the given name. |
+| Model | [Model](#model) | The Model to associate with the given name. |
 
 ??? example "Example of declareModel"
     ```javascript hl_lines="3"
@@ -58,7 +46,7 @@ const { newModel } = require('ilorm');
 
 const Model = newModel({ name, schema, connector })
 ```
-Return a class Model you can use in your project to create new data or query.
+Return a class [Model](#model) you can use in your project to create new data or query.
 
 | Parameter        | Type    | Default | Description              |
 |:----------------:|:-------:|:-------:| ------------------------ |
@@ -105,6 +93,8 @@ Return a class Model you can use in your project to create new data or query.
 #### Ilorm.use()
 
 ## Model
+Model could not be created directly. To access this API, you need to invoke the
+[newModel](#ilormnewmodel) method from ilorm. And create your own child model.
 
 ### <small style="color:blue;">(static)</small> Model.query()
 Create a [Query](#query) instance targeting the current Model.

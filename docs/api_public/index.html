@@ -270,20 +270,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ilormmodel" title="Ilorm.Model" class="md-nav__link">
-    Ilorm.Model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ilormquery" title="Ilorm.Query" class="md-nav__link">
-    Ilorm.Query
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ilormschema" title="Ilorm.Schema" class="md-nav__link">
     Ilorm.Schema
   </a>
@@ -732,20 +718,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ilormmodel" title="Ilorm.Model" class="md-nav__link">
-    Ilorm.Model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ilormquery" title="Ilorm.Query" class="md-nav__link">
-    Ilorm.Query
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ilormschema" title="Ilorm.Schema" class="md-nav__link">
     Ilorm.Schema
   </a>
@@ -1135,16 +1107,8 @@
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">ilorm</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
 </pre></div></p>
 <h3 id="exported-class">Exported class<a class="headerlink" href="#exported-class" title="Permanent link">&para;</a></h3>
-<h4 id="ilormmodel">Ilorm.Model<a class="headerlink" href="#ilormmodel" title="Permanent link">&para;</a></h4>
-<p><a href="#model">See Model</a>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Model</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
-</pre></div></p>
-<h4 id="ilormquery">Ilorm.Query<a class="headerlink" href="#ilormquery" title="Permanent link">&para;</a></h4>
-<p><a href="#query">See Query</a>
-<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Query</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
-</pre></div></p>
 <h4 id="ilormschema">Ilorm.Schema<a class="headerlink" href="#ilormschema" title="Permanent link">&para;</a></h4>
-<p><a href="#schema">See Schema</a>
+<p>Use to declare your schema. <a href="#schema">See Schema</a>
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
 </pre></div></p>
 <h3 id="exported-functions">Exported functions<a class="headerlink" href="#exported-functions" title="Permanent link">&para;</a></h3>
@@ -1169,7 +1133,7 @@ to define which Class will be instancied in each case.
 </tr>
 <tr>
 <td align="center">Model</td>
-<td align="center">Model</td>
+<td align="center"><a href="#model">Model</a></td>
 <td>The Model to associate with the given name.</td>
 </tr>
 </tbody>
@@ -1190,7 +1154,7 @@ to define which Class will be instancied in each case.
 
 <span class="kr">const</span> <span class="nx">Model</span> <span class="o">=</span> <span class="nx">newModel</span><span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">schema</span><span class="p">,</span> <span class="nx">connector</span> <span class="p">})</span>
 </pre></div>
-Return a class Model you can use in your project to create new data or query.</p>
+Return a class <a href="#model">Model</a> you can use in your project to create new data or query.</p>
 <table>
 <thead>
 <tr>
@@ -1253,6 +1217,8 @@ Return a class Model you can use in your project to create new data or query.</p
 </span><span class="hll"><span class="p">});</span>
 </span></pre></div></p></details><h4 id="ilormuse">Ilorm.use()<a class="headerlink" href="#ilormuse" title="Permanent link">&para;</a></h4>
 <h2 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h2>
+<p>Model could not be created directly. To access this API, you need to invoke the
+<a href="#ilormnewmodel">newModel</a> method from ilorm. And create your own child model.</p>
 <h3 id="static-modelquery"><small style="color:blue;">(static)</small> Model.query()<a class="headerlink" href="#static-modelquery" title="Permanent link">&para;</a></h3>
 <p>Create a <a href="#query">Query</a> instance targeting the current Model.</p>
 <p><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">Model</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span>
