@@ -26,29 +26,140 @@ const { Schema } = require('ilorm');
 ```
 
 ### Exported functions
-#### Ilorm.declareModel
-#### Ilorm.modelFactory
-#### Ilorm.use
+#### Ilorm.declareModel()
+#### Ilorm.newModel()
+Create a new Model class
+```javascript
+const { newModel } = require('ilorm');
+
+const Model = newModel({ name, schema, connector })
+```
+Return a class Model you can use in your project to create new data or query.
+
+| Parameter        | Type    | Default | Description              |
+|:----------------:|:-------:|:-------:| ------------------------ |
+| name | String, Symbol | Symbol('model') | The unique name of the model, could be use to [reference](#schemafieldreference) object. |
+| schema | [Schema](#schema) | none | Specify the schema associated with the given model. |
+| connector | [Connector](#connector) | none | Specify the connector to use with the given model |
+
+!!! Tip
+    You can extends the created Model to add specific behavior of your code.
+    ```javascript
+    class YourModel extends newModel(conf) {}
+    ```
+    
+    ??? example "Example of extends Model"
+        ```javascript
+        class User extends newModel(userConf) {
+            static queryMale() {
+                return super.query()
+                    .gender.is('M');
+            }
+        }
+        ```
+
+??? example "Example of newModel"
+    Full example of creating a UserModel
+    ```javascript hl_lines="12 13 14 15 16"
+    const { Schema, newModel } = require('ilorm');
+    const mongoConnector = require('./mongoConnector');
+
+    const userSchema = new Schema({
+      firstName: Schema.string().required(),
+      lastName: Schema.string().required(),
+      birthday: Schema.date(),
+      weight: Schema.number(),
+      isLogged: Schema.boolean().required(),
+    });
+    
+    const UserModel = newModel({
+        name: 'users',
+        schema: userSchema,
+        connector: mongoConnector,
+    });
+    ```
+#### Ilorm.use()
 
 ## Model
 
+### <small style="color:blue;">(static)</small> Model.query()
+Create a [Query](#query) instance targeting the current Model.
+
+```javascript
+const query = Model.query();
+```
+Return a query instance linked with the current Model.
+
+??? example "Example of query"
+    UserModel is a Model with a numberField : `weight`.
+    ```javascript hl_lines="1"
+    const user = async UserModel.query()
+        .weight.min(80)
+        .findOne();
+    
+    ```
+
 ### <small style="color:blue;">(static)</small><small style="color:red;">(async)</small> Model.getById()
+Get an instance of the model by it's Id.
+```javascript
+const modelInstance = await Model.getById(id);
+```
+Return the instance associated with the given id.
+
+| Parameter        | Type    | Default | Description              |
+|:----------------:|:-------:|:-------:| ------------------------ |
+| id | Mixing |  | The id of the instance to get. |
+
 
 ### <small style="color:red;">(async)</small> Model.save()
+Save the current instance into the database.
+- If the instance exists, it will make an update with the updated field only.
+- If the instance does not exists. It will create the instance into the database.
+
+```javascript
+await modelInstance.save();
+```
 
 ### <small style="color:red;">(async)</small> Model.remove()
+Remove the current instance from the database.
 
-### Model.query()
+```javascript
+await modelInstance.remove();
+```
 
 ## Query
 
 ### <small style="color:red;">(async)</small> Query.findOne()
+Execute the query, and returns one element which match it.
+
+```javascript
+const instance = await query.findOne();
+```
+Return one instance which match the query.
 
 ### <small style="color:red;">(async)</small> Query.find()
+Execute the query, and returns one array containing all elements which match the query.
+
+```javascript
+const arrayOfInstances = await query.find();
+```
+Return all instance which match the query.
 
 ### <small style="color:red;">(async)</small> Query.stream()
+Execute the query, and returns the stream of all elements matching the query
+
+```javascript
+const streamOfInstances = await query.stream();
+```
+Return a stream containing all elements matching the query.
 
 ### <small style="color:red;">(async)</small> Query.count()
+Execute the query, and return how many item match the query.
+
+```javascript
+const numberOfInstance = await query.count();
+```
+Return the number of instance which match the query.
 
 ### <small style="color:red;">(async)</small> Query.updateOne()
 
