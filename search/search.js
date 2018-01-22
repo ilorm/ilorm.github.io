@@ -3,7 +3,7 @@ require.config({
 });
 
 require([
-    'mustache.min',
+    'search/mustache.min',
     'lunr.min',
     'text!search-results-template.mustache',
     'text!search_index.json',
