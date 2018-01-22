@@ -2,22 +2,22 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation!\n\n\nCome here to discover the [[api]]\n\n\nStart with ilorm\n\n\n\n\n[[Why a new ORM ?]]\n\n\n[[Ilorm vs Mongoose]]\n\n\n[[Ilorm vs Waterline]]\n\n\n[[Tuto - Start with ilorm]]\n\n\n[[Some exemples]]\n\n\n[[API]]rez\n\n\n\n\nAdvanced subject\n\n\n\n\n[[Create a plugin]]\n\n\n[[Create a connector]]\n\n\n[[Contribute]]\n\n\n[[Ilorm core architecture]]\n\n\n\n\nResources\n\n\nConnectors\n\n\n\n\n[[MongoDB connector]]\n\n\n[[PostgreSQL connector]]\n\n\n[[Redis connector]]\n\n\n\n\nPlugins\n\n\n\n\n[[SoftDelete]]\n\n\n[[Depreciation]]", 
+            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation!\n\n\nCome here to discover the \nIlorm API\n\n\nStart with ilorm\n\n\n\n\nAPI\n\n\n\n\nAdvanced subject\n\n\nWork in progress\n\n\nResources\n\n\nConnectors\n\n\n\n\nMongoDB connector\n\n\n\n\nPlugins\n\n\nWork in progress", 
             "title": "Home"
         }, 
         {
             "location": "/#ilorm-index", 
-            "text": "Welcome to the ilorm documentation!  Come here to discover the [[api]]", 
+            "text": "Welcome to the ilorm documentation!  Come here to discover the  Ilorm API", 
             "title": "Ilorm index"
         }, 
         {
             "location": "/#start-with-ilorm", 
-            "text": "[[Why a new ORM ?]]  [[Ilorm vs Mongoose]]  [[Ilorm vs Waterline]]  [[Tuto - Start with ilorm]]  [[Some exemples]]  [[API]]rez", 
+            "text": "API", 
             "title": "Start with ilorm"
         }, 
         {
             "location": "/#advanced-subject", 
-            "text": "[[Create a plugin]]  [[Create a connector]]  [[Contribute]]  [[Ilorm core architecture]]", 
+            "text": "Work in progress", 
             "title": "Advanced subject"
         }, 
         {
@@ -27,12 +27,12 @@
         }, 
         {
             "location": "/#connectors", 
-            "text": "[[MongoDB connector]]  [[PostgreSQL connector]]  [[Redis connector]]", 
+            "text": "MongoDB connector", 
             "title": "Connectors"
         }, 
         {
             "location": "/#plugins", 
-            "text": "[[SoftDelete]]  [[Depreciation]]", 
+            "text": "Work in progress", 
             "title": "Plugins"
         }, 
         {
@@ -234,6 +234,51 @@
             "location": "/api_public/#schemafieldstring", 
             "text": "Define the field as string.", 
             "title": "SchemaField/String"
+        }, 
+        {
+            "location": "/connectors/mongodb/", 
+            "text": "ilorm-connector-mongo\n\n\nThe MongoDB connector is the Connector to use to mongoDB as storage for your ilorm model.\n\n\nHow it works\n\n\nTo use this connector :\n\n\n\n\n\n\nfirst declare it in your project :\n\nconst\n \nilorm\n \n=\n \nrequire\n(\nilorm\n);\n\n\nconst\n \nilormMongo\n \n=\n \nrequire\n(\nilorm-connector-mongodb\n);\n\n\n\nilorm\n.\nuse\n(\nilormMongo\n);\n\n\n\n\n\n\n\n\nSecond, you need to create a MongoConnector. To do that, you need to make a connection\nbetween your database and your project. You can create it with a basic mongo client :\n\nconst\n \nilormMongo\n \n=\n \nrequire\n(\nilorm-connector-mongodb\n);\n\n\nconst\n \n{\n \nMongoClient\n,\n \n}\n \n=\n \nrequire\n(\nmongodb\n);\n\n\nconst\n \nDB_URL\n \n=\n \nmongodb://localhost:27017/ilorm\n;\n\n\n\nconst\n \nmongoClient\n \n=\n \nawait\n \nMongoClient\n.\nconnect\n(\nDB_URL\n);\n\n\nconst\n \ndatabase\n \n=\n \nawait\n \nmongoClient\n.\ndb\n(\nilorm\n);\n\n\n\nconst\n \nMongoConnector\n \n=\n \nilormMongo\n.\nfromClient\n(\ndatabase\n);\n\n\n\n\n\n\n\n\nFinally you need to choose the collection used to store your model :\n\nconst\n \nmodelFactoryParams\n \n=\n \n{\n\n  \nname\n:\n \nusers\n,\n\n  \nschema\n:\n \nuserSchema\n,\n\n  \nconnector\n:\n \nnew\n \nMongoConnector\n({\n\n    \ncollectionName\n:\n \nusers\n,\n\n  \n}),\n\n\n};\n\n\n\nconst\n \nUserModel\n \n=\n \nnewModel\n(\nmodelFactoryParams\n);\n\n\n\n\n\n\n\n\nConnector\n\n\n(constructor) Connector\n\n\nModel\n\n\nQuery\n\n\nSchema\n\n\nSchemaField", 
+            "title": "MongoDB"
+        }, 
+        {
+            "location": "/connectors/mongodb/#ilorm-connector-mongo", 
+            "text": "The MongoDB connector is the Connector to use to mongoDB as storage for your ilorm model.", 
+            "title": "ilorm-connector-mongo"
+        }, 
+        {
+            "location": "/connectors/mongodb/#how-it-works", 
+            "text": "To use this connector :    first declare it in your project : const   ilorm   =   require ( ilorm );  const   ilormMongo   =   require ( ilorm-connector-mongodb );  ilorm . use ( ilormMongo );     Second, you need to create a MongoConnector. To do that, you need to make a connection\nbetween your database and your project. You can create it with a basic mongo client : const   ilormMongo   =   require ( ilorm-connector-mongodb );  const   {   MongoClient ,   }   =   require ( mongodb );  const   DB_URL   =   mongodb://localhost:27017/ilorm ;  const   mongoClient   =   await   MongoClient . connect ( DB_URL );  const   database   =   await   mongoClient . db ( ilorm );  const   MongoConnector   =   ilormMongo . fromClient ( database );     Finally you need to choose the collection used to store your model : const   modelFactoryParams   =   { \n   name :   users , \n   schema :   userSchema , \n   connector :   new   MongoConnector ({ \n     collectionName :   users , \n   }),  };  const   UserModel   =   newModel ( modelFactoryParams );", 
+            "title": "How it works"
+        }, 
+        {
+            "location": "/connectors/mongodb/#connector", 
+            "text": "", 
+            "title": "Connector"
+        }, 
+        {
+            "location": "/connectors/mongodb/#constructor-connector", 
+            "text": "", 
+            "title": "(constructor) Connector"
+        }, 
+        {
+            "location": "/connectors/mongodb/#model", 
+            "text": "", 
+            "title": "Model"
+        }, 
+        {
+            "location": "/connectors/mongodb/#query", 
+            "text": "", 
+            "title": "Query"
+        }, 
+        {
+            "location": "/connectors/mongodb/#schema", 
+            "text": "", 
+            "title": "Schema"
+        }, 
+        {
+            "location": "/connectors/mongodb/#schemafield", 
+            "text": "", 
+            "title": "SchemaField"
         }
     ]
 }

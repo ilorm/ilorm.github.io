@@ -2,6 +2,8 @@ site_name: Ilorm documentation
 pages:
     - Home: index.md
     - API: api_public.md
+    - Connectors:
+        - MongoDB: connectors/mongodb.md
 theme:
   name: 'material'
   palette:

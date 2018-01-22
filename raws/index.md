@@ -2,28 +2,17 @@
 
 Welcome to the ilorm documentation!
 
-Come here to discover the [[api]]
+Come here to discover the [Ilorm API](./api_public)
 
 ## Start with ilorm
-* [[Why a new ORM ?]]
-* [[Ilorm vs Mongoose]]
-* [[Ilorm vs Waterline]]
-* [[Tuto - Start with ilorm]]
-* [[Some exemples]]
-* [[API]]rez
+* [API](./api_public)
 
 ## Advanced subject
-* [[Create a plugin]]
-* [[Create a connector]]
-* [[Contribute]]
-* [[Ilorm core architecture]]
+Work in progress
 
 ## Resources
 ### Connectors
-* [[MongoDB connector]]
-* [[PostgreSQL connector]]
-* [[Redis connector]]
+* [MongoDB connector](./connectors/mongodb)
 
 ### Plugins
-* [[SoftDelete]]
-* [[Depreciation]]
+Work in progress
