@@ -1,0 +1,239 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation!\n\n\nCome here to discover the [[api]]\n\n\nStart with ilorm\n\n\n\n\n[[Why a new ORM ?]]\n\n\n[[Ilorm vs Mongoose]]\n\n\n[[Ilorm vs Waterline]]\n\n\n[[Tuto - Start with ilorm]]\n\n\n[[Some exemples]]\n\n\n[[API]]rez\n\n\n\n\nAdvanced subject\n\n\n\n\n[[Create a plugin]]\n\n\n[[Create a connector]]\n\n\n[[Contribute]]\n\n\n[[Ilorm core architecture]]\n\n\n\n\nResources\n\n\nConnectors\n\n\n\n\n[[MongoDB connector]]\n\n\n[[PostgreSQL connector]]\n\n\n[[Redis connector]]\n\n\n\n\nPlugins\n\n\n\n\n[[SoftDelete]]\n\n\n[[Depreciation]]", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#ilorm-index", 
+            "text": "Welcome to the ilorm documentation!  Come here to discover the [[api]]", 
+            "title": "Ilorm index"
+        }, 
+        {
+            "location": "/#start-with-ilorm", 
+            "text": "[[Why a new ORM ?]]  [[Ilorm vs Mongoose]]  [[Ilorm vs Waterline]]  [[Tuto - Start with ilorm]]  [[Some exemples]]  [[API]]rez", 
+            "title": "Start with ilorm"
+        }, 
+        {
+            "location": "/#advanced-subject", 
+            "text": "[[Create a plugin]]  [[Create a connector]]  [[Contribute]]  [[Ilorm core architecture]]", 
+            "title": "Advanced subject"
+        }, 
+        {
+            "location": "/#resources", 
+            "text": "", 
+            "title": "Resources"
+        }, 
+        {
+            "location": "/#connectors", 
+            "text": "[[MongoDB connector]]  [[PostgreSQL connector]]  [[Redis connector]]", 
+            "title": "Connectors"
+        }, 
+        {
+            "location": "/#plugins", 
+            "text": "[[SoftDelete]]  [[Depreciation]]", 
+            "title": "Plugins"
+        }, 
+        {
+            "location": "/api_public/", 
+            "text": "API Public\n\n\nIlorm\n\n\nMain package documentation.\n\nconst\n \nilorm\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\n\nExported class\n\n\nIlorm.Model\n\n\nSee Model\n\n\nconst\n \n{\n\u00a0\nModel\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\n\nIlorm.Query\n\n\nSee Query\n\n\nconst\n \n{\n\u00a0\nQuery\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\n\nIlorm.Schema\n\n\nSee Schema\n\n\nconst\n \n{\n\u00a0\nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\n\nExported functions\n\n\nIlorm.declareModel\n\n\nIlorm.modelFactory\n\n\nIlorm.use\n\n\nModel\n\n\n(static)\n(async)\n Model.getById()\n\n\n(async)\n Model.save()\n\n\n(async)\n Model.remove()\n\n\nModel.query()\n\n\nQuery\n\n\n(async)\n Query.findOne()\n\n\n(async)\n Query.find()\n\n\n(async)\n Query.stream()\n\n\n(async)\n Query.count()\n\n\n(async)\n Query.updateOne()\n\n\n(async)\n Query.update()\n\n\n(async)\n Query.removeOne()\n\n\n(async)\n Query.remove()\n\n\nSchema\n\n\nSchema define how your data are stored.\n\n\nExample of schema\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\nrequired\n(),\n\n\n});\n\n\nconstructor Schema()\n\n\nInstantiate a new schema object.\n\n\nnew\n \nSchema\n(\nschemaDefinition\n);\n\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nschemaDefinition\n\n\nObject\n\n\nAn object ; \n{ key: SchemaField }\n where every key will be the name of the field in the model, and SchemaField the definition of the field.\n\n\n\n\n\n\n\n\n(static)\n Schema.boolean()\n\n\nFactory to create a \nBoolean\n.\n\nSchema\n.\nboolean\n()\n\n\n\n\nReturn a \nBoolean instance\n.\n\n\nExample of boolean\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\nrequired\n(),\n\n\n});\n\n\n(static)\n Schema.date()\n\n\nFactory to create a \nDate\n.\n\nSchema\n.\ndate\n()\n\n\n\n\nReturn a \nDate instance\n.\n\n\nExample of date\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\nrequired\n(),\n\n\n});\n\n\n(static)\n Schema.number()\n\n\nFactory to create a \nNumber\n.\n\nSchema\n.\nnumber\n()\n\n\n\n\nReturn a \nNumber instance\n.\n\n\nExample of number\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\nrequired\n(),\n\n\n});\n\n\n(static)\n Schema.reference()\n\n\nFactory to create a \nReference\n.\n\nSchema\n.\nreference\n(\nmodelName\n)\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nmodelName\n\n\nString\n\n\nSpecify which model is linked with the given reference.\n\n\n\n\n\n\n\n\nReturn a \nReference instance\n.\n\n\nExample of reference\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n\n  \nfather\n:\n \nSchema\n.\nreference\n(\nusers\n),\n\n\n});\n\n\n(static)\n Schema.string()\n\n\nFactory to create a \nString\n.\n\nSchema\n.\nstring\n()\n\n\n\n\nReturn a \nString instance\n.\n\n\nExample of string\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\nrequired\n(),\n\n\n});\n\n\nSchemaField\n\n\nSchemaField is a class used to define the behavior of your fields. Every field type\nare children of the SchemaField class. The SchemaField class is an abstract class.\nYou can create your own custom field by inheritance with SchemaField.\n\n\nSchemaField.default()\n\n\nSpecify the default value of the field, if no value are provided.\n\nconst\n \nfield\n \n=\n \nnew\n \nSchemaField\n();\n\n\n\nfield\n.\ndefault\n(\nvalue\n);\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nvalue\n\n\n*\n\n\nDefine the default value of the field.\n\n\n\n\n\n\n\n\nExample of default\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\ndefault\n(\ntrue\n).\nrequired\n(),\n\n\n});\n\n\nSchemaField.required()\n\n\nSpecify the field as required. A required field is mandatory to be save.\nAn instance without mandatory field throw error.\n\nconst\n \nfield\n \n=\n \nnew\n \nSchemaField\n();\n\n\n\nfield\n.\nrequired\n(\nisRequired\n \n=\n \ntrue\n);\n\n\n\n\n\n\n\n\n\n\nParameter\n\n\nType\n\n\nDefault\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nisRequired\n\n\nBoolean\n\n\ntrue\n\n\nDefine the field as required (or not).\n\n\n\n\n\n\n\n\nPer default, the field is always not required. By calling this method, without parameter\nyou change the required status.\n\n\nExample of required\nBasic example of what a schema \"user\" could look like :\n\nconst\n \n{\n \nSchema\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nuserSchema\n \n=\n \nnew\n \nSchema\n({\n\n\n  \nfirstName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n\n  \nlastName\n:\n \nSchema\n.\nstring\n().\nrequired\n(),\n\n\n  \nbirthday\n:\n \nSchema\n.\ndate\n(),\n\n  \nweight\n:\n \nSchema\n.\nnumber\n(),\n\n\n  \nisLogged\n:\n \nSchema\n.\nboolean\n().\ndefault\n(\ntrue\n).\nrequired\n(),\n\n\n});\n\n\nSchemaField/Boolean\n\n\nDefine the field as boolean.\n\n\nSchemaField/Date\n\n\nDefine the field as date.\n\n\nSchemaField/Number\n\n\nDefine the field as number.\n\n\nSchemaField/Reference\n\n\nDefine the field as reference.\n\n\nSchemaField/String\n\n\nDefine the field as string.", 
+            "title": "API"
+        }, 
+        {
+            "location": "/api_public/#api-public", 
+            "text": "", 
+            "title": "API Public"
+        }, 
+        {
+            "location": "/api_public/#ilorm", 
+            "text": "Main package documentation. const   ilorm   =   require ( ilorm );", 
+            "title": "Ilorm"
+        }, 
+        {
+            "location": "/api_public/#exported-class", 
+            "text": "", 
+            "title": "Exported class"
+        }, 
+        {
+            "location": "/api_public/#ilormmodel", 
+            "text": "See Model  const   { \u00a0 Model   }   =   require ( ilorm );", 
+            "title": "Ilorm.Model"
+        }, 
+        {
+            "location": "/api_public/#ilormquery", 
+            "text": "See Query  const   { \u00a0 Query   }   =   require ( ilorm );", 
+            "title": "Ilorm.Query"
+        }, 
+        {
+            "location": "/api_public/#ilormschema", 
+            "text": "See Schema  const   { \u00a0 Schema   }   =   require ( ilorm );", 
+            "title": "Ilorm.Schema"
+        }, 
+        {
+            "location": "/api_public/#exported-functions", 
+            "text": "", 
+            "title": "Exported functions"
+        }, 
+        {
+            "location": "/api_public/#ilormdeclaremodel", 
+            "text": "", 
+            "title": "Ilorm.declareModel"
+        }, 
+        {
+            "location": "/api_public/#ilormmodelfactory", 
+            "text": "", 
+            "title": "Ilorm.modelFactory"
+        }, 
+        {
+            "location": "/api_public/#ilormuse", 
+            "text": "", 
+            "title": "Ilorm.use"
+        }, 
+        {
+            "location": "/api_public/#model", 
+            "text": "", 
+            "title": "Model"
+        }, 
+        {
+            "location": "/api_public/#staticasync-modelgetbyid", 
+            "text": "", 
+            "title": "(static)(async) Model.getById()"
+        }, 
+        {
+            "location": "/api_public/#async-modelsave", 
+            "text": "", 
+            "title": "(async) Model.save()"
+        }, 
+        {
+            "location": "/api_public/#async-modelremove", 
+            "text": "", 
+            "title": "(async) Model.remove()"
+        }, 
+        {
+            "location": "/api_public/#modelquery", 
+            "text": "", 
+            "title": "Model.query()"
+        }, 
+        {
+            "location": "/api_public/#query", 
+            "text": "", 
+            "title": "Query"
+        }, 
+        {
+            "location": "/api_public/#async-queryfindone", 
+            "text": "", 
+            "title": "(async) Query.findOne()"
+        }, 
+        {
+            "location": "/api_public/#async-queryfind", 
+            "text": "", 
+            "title": "(async) Query.find()"
+        }, 
+        {
+            "location": "/api_public/#async-querystream", 
+            "text": "", 
+            "title": "(async) Query.stream()"
+        }, 
+        {
+            "location": "/api_public/#async-querycount", 
+            "text": "", 
+            "title": "(async) Query.count()"
+        }, 
+        {
+            "location": "/api_public/#async-queryupdateone", 
+            "text": "", 
+            "title": "(async) Query.updateOne()"
+        }, 
+        {
+            "location": "/api_public/#async-queryupdate", 
+            "text": "", 
+            "title": "(async) Query.update()"
+        }, 
+        {
+            "location": "/api_public/#async-queryremoveone", 
+            "text": "", 
+            "title": "(async) Query.removeOne()"
+        }, 
+        {
+            "location": "/api_public/#async-queryremove", 
+            "text": "", 
+            "title": "(async) Query.remove()"
+        }, 
+        {
+            "location": "/api_public/#schema", 
+            "text": "Schema define how your data are stored.  Example of schema Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({ \n   firstName :   Schema . string (). required (), \n   lastName :   Schema . string (). required (), \n   birthday :   Schema . date (), \n   weight :   Schema . number (), \n   isLogged :   Schema . boolean (). required (),  });", 
+            "title": "Schema"
+        }, 
+        {
+            "location": "/api_public/#constructor-schema", 
+            "text": "Instantiate a new schema object.  new   Schema ( schemaDefinition );      Parameter  Type  Description      schemaDefinition  Object  An object ;  { key: SchemaField }  where every key will be the name of the field in the model, and SchemaField the definition of the field.", 
+            "title": "constructor Schema()"
+        }, 
+        {
+            "location": "/api_public/#static-schemaboolean", 
+            "text": "Factory to create a  Boolean . Schema . boolean ()   Return a  Boolean instance .  Example of boolean Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({ \n   firstName :   Schema . string (). required (), \n   lastName :   Schema . string (). required (), \n   birthday :   Schema . date (), \n   weight :   Schema . number (),     isLogged :   Schema . boolean (). required (),  });", 
+            "title": "(static) Schema.boolean()"
+        }, 
+        {
+            "location": "/api_public/#static-schemadate", 
+            "text": "Factory to create a  Date . Schema . date ()   Return a  Date instance .  Example of date Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({ \n   firstName :   Schema . string (). required (), \n   lastName :   Schema . string (). required (),     birthday :   Schema . date (),     weight :   Schema . number (), \n   isLogged :   Schema . boolean (). required (),  });", 
+            "title": "(static) Schema.date()"
+        }, 
+        {
+            "location": "/api_public/#static-schemanumber", 
+            "text": "Factory to create a  Number . Schema . number ()   Return a  Number instance .  Example of number Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({ \n   firstName :   Schema . string (). required (), \n   lastName :   Schema . string (). required (), \n   birthday :   Schema . date (),     weight :   Schema . number (),     isLogged :   Schema . boolean (). required (),  });", 
+            "title": "(static) Schema.number()"
+        }, 
+        {
+            "location": "/api_public/#static-schemareference", 
+            "text": "Factory to create a  Reference . Schema . reference ( modelName )      Parameter  Type  Description      modelName  String  Specify which model is linked with the given reference.     Return a  Reference instance .  Example of reference Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({ \n   firstName :   Schema . string (). required (), \n   lastName :   Schema . string (). required (),     father :   Schema . reference ( users ),  });", 
+            "title": "(static) Schema.reference()"
+        }, 
+        {
+            "location": "/api_public/#static-schemastring", 
+            "text": "Factory to create a  String . Schema . string ()   Return a  String instance .  Example of string Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({     firstName :   Schema . string (). required (),     lastName :   Schema . string (). required (),     birthday :   Schema . date (), \n   weight :   Schema . number (), \n   isLogged :   Schema . boolean (). required (),  });", 
+            "title": "(static) Schema.string()"
+        }, 
+        {
+            "location": "/api_public/#schemafield", 
+            "text": "SchemaField is a class used to define the behavior of your fields. Every field type\nare children of the SchemaField class. The SchemaField class is an abstract class.\nYou can create your own custom field by inheritance with SchemaField.", 
+            "title": "SchemaField"
+        }, 
+        {
+            "location": "/api_public/#schemafielddefault", 
+            "text": "Specify the default value of the field, if no value are provided. const   field   =   new   SchemaField ();  field . default ( value );      Parameter  Type  Description      value  *  Define the default value of the field.     Example of default Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({ \n   firstName :   Schema . string (). required (), \n   lastName :   Schema . string (). required (), \n   birthday :   Schema . date (), \n   weight :   Schema . number (),     isLogged :   Schema . boolean (). default ( true ). required (),  });", 
+            "title": "SchemaField.default()"
+        }, 
+        {
+            "location": "/api_public/#schemafieldrequired", 
+            "text": "Specify the field as required. A required field is mandatory to be save.\nAn instance without mandatory field throw error. const   field   =   new   SchemaField ();  field . required ( isRequired   =   true );      Parameter  Type  Default  Description      isRequired  Boolean  true  Define the field as required (or not).     Per default, the field is always not required. By calling this method, without parameter\nyou change the required status.  Example of required Basic example of what a schema \"user\" could look like : const   {   Schema   }   =   require ( ilorm );  const   userSchema   =   new   Schema ({     firstName :   Schema . string (). required (),     lastName :   Schema . string (). required (),     birthday :   Schema . date (), \n   weight :   Schema . number (),     isLogged :   Schema . boolean (). default ( true ). required (),  });", 
+            "title": "SchemaField.required()"
+        }, 
+        {
+            "location": "/api_public/#schemafieldboolean", 
+            "text": "Define the field as boolean.", 
+            "title": "SchemaField/Boolean"
+        }, 
+        {
+            "location": "/api_public/#schemafielddate", 
+            "text": "Define the field as date.", 
+            "title": "SchemaField/Date"
+        }, 
+        {
+            "location": "/api_public/#schemafieldnumber", 
+            "text": "Define the field as number.", 
+            "title": "SchemaField/Number"
+        }, 
+        {
+            "location": "/api_public/#schemafieldreference", 
+            "text": "Define the field as reference.", 
+            "title": "SchemaField/Reference"
+        }, 
+        {
+            "location": "/api_public/#schemafieldstring", 
+            "text": "Define the field as string.", 
+            "title": "SchemaField/String"
+        }
+    ]
+}

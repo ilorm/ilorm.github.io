@@ -1,7 +1,7 @@
 site_name: Ilorm documentation
 pages:
     - Home: index.md
-    - Api: api.md
+    - API: api_public.md
 theme:
   name: 'material'
   palette:
@@ -9,3 +9,27 @@ theme:
     accent: 'light blue'
 repo_name: 'stombre/ilorm'
 repo_url: 'https://github.com/stombre/ilorm'
+docs_dir: 'raws'
+site_dir: 'docs'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
