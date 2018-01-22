@@ -1,1 +1,11 @@
-site_name: My Docs
+site_name: Ilorm documentation
+pages:
+    - Home: index.md
+    - Api: api.md
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue'
+    accent: 'light blue'
+repo_name: 'stombre/ilorm'
+repo_url: 'https://github.com/stombre/ilorm'

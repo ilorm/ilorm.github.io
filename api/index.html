@@ -1,0 +1,627 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.1">
+    
+    
+      
+        <title>Api - Ilorm documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.aa3de92b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#connector" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../site" title="Ilorm documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Ilorm documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Api
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/stombre/ilorm/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      stombre/ilorm
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Ilorm documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/stombre/ilorm/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      stombre/ilorm
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../site" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="" title="Api" class="md-nav__link md-nav__link--active">
+      Api
+    </a>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stombre/ilorm/edit/master/docs/api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="connector">Connector</h1>
+<h1 id="model">Model</h1>
+<h1 id="query">Query</h1>
+<h1 id="schema">Schema</h1>
+<h1 id="schemafield">SchemaField</h1>
+<h1 id="test">Test</h1>
+<h2 id="why-a-new-orm">Why a new ORM ?</h2>
+<ul>
+<li>Use newest feature of ECMAScript (modern javascript). </li>
+<li>Universal database connector (MongoDB, SQL, Redis, REST, CSV...).  </li>
+<li>Could create powerful plugin using the "class" inheritance.</li>
+</ul>
+<h2 id="features">Features</h2>
+<h2 id="initialize">Initialize</h2>
+<h2 id="schema_1">Schema</h2>
+<pre><code class="javascript">const ilorm = require('ilorm');
+const schema = ilorm.schema;
+
+const schema = schema.new({
+  firstName: schema.String().required(),
+  lastName: schema.String().required(),
+  children: schema.Array(schema.reference('User'))
+  birthday: schema.Date(),
+  weight: schema.Number().min(5).max(500)
+});
+
+</code></pre>
+
+<h3 id="ilormschema">ilorm.schema</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>static</em> new( schema )</td>
+<td>Create a new ilorm schema.</td>
+</tr>
+<tr>
+<td align="center"><em>static</em> string()</td>
+<td>Instantiate a SchemaField/String</td>
+</tr>
+<tr>
+<td align="center"><em>static</em> number()</td>
+<td>Instantiate a SchemaField/Number</td>
+</tr>
+<tr>
+<td align="center"><em>static</em> boolean()</td>
+<td>Instantiate a SchemaField/Boolean</td>
+</tr>
+<tr>
+<td align="center"><em>static</em> date()</td>
+<td>Instantiate a SchemaField/Date</td>
+</tr>
+<tr>
+<td align="center"><em>static</em> reference()</td>
+<td>Instantiate a SchemaField/Reference</td>
+</tr>
+</tbody>
+</table>
+<h3 id="all-schemafield">All SchemaField</h3>
+<p>All SchemaField are children of the class SchemaField. This class contains this method :</p>
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">required()</td>
+<td>The field is required for create an object (per default not required).</td>
+</tr>
+<tr>
+<td align="center">default(<code>value</code>)</td>
+<td>Set a precise value for default (if you do not set a value at creation).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schemafieldnumber">SchemaField/Number</h3>
+<p>Represent a javascript number.</p>
+<h3 id="schemafieldstring">SchemaField/String</h3>
+<p>Represent a javascript string.</p>
+<h3 id="schemafieldboolean">SchemaField/Boolean</h3>
+<p>Represent a javascript boolean.</p>
+<h3 id="schemafielddate">SchemaField/Date</h3>
+<p>Represent a javascript date.</p>
+<h3 id="schemafieldreference">SchemaField/Reference</h3>
+<p>Represent a javascript reference to another instance.</p>
+<h2 id="models">Models</h2>
+<pre><code class="javascript">const ilorm = require('ilorm');
+const ilormMongo = require('ilorm-connector-mongo');
+const model = require('ilorm').model;
+
+const userSchema = require('./schema');
+const userModel = model('User', userModel, ilormMongo({ db }));
+
+userModel.query()
+  .firstName.is('Smith')
+  .findOne()
+  .then(user =&gt; {
+    user.weight = 30;
+    return user.save();
+  });
+</code></pre>
+
+<h3 id="ilormmodel">ilorm.model</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">query()</td>
+<td>Instantiate a Query targeting the current Model</td>
+</tr>
+</tbody>
+</table>
+<h2 id="query_1">Query</h2>
+<h3 id="fields">Fields</h3>
+<p>In a query, every field present in the schema could be use to build the query.
+The <strong>[field]</strong> part in further documentation are every field declared in your specific schema.</p>
+<h4 id="exemple-of-query">Exemple of query</h4>
+<pre><code class="javascript">// if your schema is something like this ;
+const schema = ilorm.schema({
+  firstName: ilorm.String().required(),
+});
+
+// You could write query like this :
+const user = await User.query()
+    .firstName.is('Smith')
+    .findOne();
+</code></pre>
+
+<h3 id="filters">Filters</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>[field]</strong>.is(value)</td>
+<td>Check if the field is equal value</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.isNot(value)</td>
+<td>Check if the field is not equal with value</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.isIn(arrayOfValue)</td>
+<td>Check if the field value is one of the array value</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.isNotIn(arrayOfValue)</td>
+<td>Check if the field value is none of array value</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.between(min, max)</td>
+<td>Check if the value is between min and max (include)</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.min(value)</td>
+<td>Check if the value is equal or superior than the value</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.max(value)</td>
+<td>Check if the value is equal or inferior than the value</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.linkedWith(value)</td>
+<td>Check if the field (reference) is linked with another model, id, ...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="update">Update</h3>
+<p>Used for update or updateOne query only :</p>
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>[field]</strong>.set(<code>value</code>)</td>
+<td>Set the value of the field</td>
+</tr>
+<tr>
+<td align="center"><strong>[field]</strong>.inc(<code>value</code>)</td>
+<td>Incremente the value of the field by the given value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operations">Operations</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">find()</td>
+<td>Run the query and return a promise with the result (array of instance).</td>
+</tr>
+<tr>
+<td align="center">findOne()</td>
+<td>Run the query and return a promise the result (instance).</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td>Count the number of instance and return it.</td>
+</tr>
+<tr>
+<td align="center">stream()</td>
+<td>Run the query with a stream context could be the best solution for big query.</td>
+</tr>
+<tr>
+<td align="center">remove()</td>
+<td>Remove the instance which match the query.</td>
+</tr>
+<tr>
+<td align="center">removeOne()</td>
+<td>Remove only one instance which math the query.</td>
+</tr>
+<tr>
+<td align="center">update()</td>
+<td>Used to update many instance.</td>
+</tr>
+<tr>
+<td align="center">updateOne()</td>
+<td>Used to update one instance.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="queryupdate">Query.update</h4>
+<pre><code class="javascript">userModel.query()
+  .firstName.is('Smith')
+  .weight.set(30)
+  .update();
+
+</code></pre>
+
+<h4 id="querystream">Query.stream</h4>
+<pre><code class="javascript">userModel.query()
+  .stream() //Return a standard stream
+  .pipe(otherStream);
+
+</code></pre>
+
+<h2 id="instances">Instances</h2>
+<p>Instances are returned after a loading (find, or stream). It's a specific item loaded from the database. You can create a new instance from the model :</p>
+<pre><code class="javascript">const instance = new userModel();
+instance.firstName = 'Thibauld';
+instance.lastName = 'Smith';
+instance.save();
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">save()</td>
+<td>Save the instance in the database (auto insert or update)</td>
+</tr>
+<tr>
+<td align="center">remove()</td>
+<td>Delete the instance from the database</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../site" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ed2cc613.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

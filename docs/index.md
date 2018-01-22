@@ -1,17 +1,27 @@
-# Welcome to MkDocs
+Welcome to the ilorm documentation!
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+Come here to discover the [[api]]
 
-## Commands
+# Start with ilorm
+* [[Why a new ORM ?]]
+* [[Ilorm vs Mongoose]]
+* [[Ilorm vs Waterline]]
+* [[Tuto - Start with ilorm]]
+* [[Some exemples]]
+* [[API]]
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+# Advanced subject
+* [[Create a plugin]]
+* [[Create a connector]]
+* [[Contribute]]
+* [[Ilorm core architecture]]
 
-## Project layout
+# Resources
+## Connectors
+* [[MongoDB connector]]
+* [[PostgreSQL connector]]
+* [[Redis connector]]
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Plugins
+* [[SoftDelete]]
+* [[Depreciation]]
