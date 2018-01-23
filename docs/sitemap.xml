@@ -4,7 +4,15 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-01-22</lastmod>
+     <lastmod>2018-01-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/quick_start/</loc>
+     <lastmod>2018-01-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +20,7 @@
     
     <url>
      <loc>/api_public/</loc>
-     <lastmod>2018-01-22</lastmod>
+     <lastmod>2018-01-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,7 +29,7 @@
         
     <url>
      <loc>/connectors/mongodb/</loc>
-     <lastmod>2018-01-22</lastmod>
+     <lastmod>2018-01-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

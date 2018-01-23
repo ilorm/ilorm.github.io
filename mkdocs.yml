@@ -1,6 +1,7 @@
 site_name: Ilorm documentation
 pages:
     - Home: index.md
+    - Quick start: quick_start.md
     - API: api_public.md
     - Connectors:
         - MongoDB: connectors/mongodb.md

@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation!\n\n\nCome here to discover the \nIlorm API\n\n\nStart with ilorm\n\n\n\n\nAPI\n\n\n\n\nAdvanced subject\n\n\nWork in progress\n\n\nResources\n\n\nConnectors\n\n\n\n\nMongoDB connector\n\n\n\n\nPlugins\n\n\nWork in progress", 
+            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation! \nQuick start guide\n.\n\n\nCome here to discover the \nIlorm API\n.\n\n\nStart with ilorm\n\n\n\n\nAPI\n\n\n\n\nAdvanced subject\n\n\nWork in progress\n\n\nResources\n\n\nConnectors\n\n\n\n\nMongoDB connector\n\n\n\n\nPlugins\n\n\nWork in progress", 
             "title": "Home"
         }, 
         {
             "location": "/#ilorm-index", 
-            "text": "Welcome to the ilorm documentation!  Come here to discover the  Ilorm API", 
+            "text": "Welcome to the ilorm documentation!  Quick start guide .  Come here to discover the  Ilorm API .", 
             "title": "Ilorm index"
         }, 
         {
@@ -34,6 +34,46 @@
             "location": "/#plugins", 
             "text": "Work in progress", 
             "title": "Plugins"
+        }, 
+        {
+            "location": "/quick_start/", 
+            "text": "Quick start\n\n\nIlorm are based on five core concepts : Connector, Model, Schema, SchemaField and Query.\n- Connectors are the definition which kind of database you use to store your data.\n- Model are class representing your data.\n- Schema define your model behavior (fields type)\n- SchemaField define the behavior of your data field.\n- Query is a powerful query builder tool to edit, delete, get data...\n\n\nInstall ilorm\n\n\nFirst install ilorm :\n\nnpm install ilorm\n\n\n\nAfter you can install the mongo-connector :\n\nnpm install ilorm-connector-mongodb\n\n\n\nYou can use another connector if you use different kind of database.\n\n\nDefine a schema\n\n\nTo define your schema, just use the Schema class of ilorm\n\nconst\n \n{\n \nSchema\n,\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \ninvoiceSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \ncreatedAt\n:\n \nSchema\n.\ndate\n(),\n\n  \namount\n:\n \nSchema\n.\nnumber\n()\n\n\n});\n\n\n\nWith this code, you have a basic schema with two properties :\n- createdAt which will be a date.\n- amount which will be a number.\n\n\nPrepare your Connector\n\n\nconst\n \nMongoClient\n \n=\n \nrequire\n(\nmongodb\n);\n\n\nconst\n \nilorm\n \n=\n \nrequire\n(\nilorm\n);\n\n\nconst\n \nIlormMongo\n \n=\n \nrequire\n(\nilorm-connector-mongodb\n);\n\n\n\n// Declare you use ilormMongo (init plugin part of the connector) :\n\n\nilorm\n.\nuse\n(\nIlormMongo\n);\n\n\n\n// Create a database :\n\n\nconst\n \nmongoClient\n \n=\n \nawait\n \nMongoClient\n.\nconnect\n(\nDB_URL\n);\n\n\nconst\n \ndatabase\n \n=\n \nawait\n \nmongoClient\n.\ndb\n(\nilorm\n);\n\n\n\n// Create your Connector class binded with your database :\n\n\nconst\n \nMongoConnector\n \n=\n \nIlormMongo\n.\nfromClient\n(\ndatabase\n);\n\n\n\n// Create an instance of your connector. It will save in the collection: accounts ;\n\n\nconst\n \ninvoiceConnector\n \n=\n \nnew\n \nMongoConnector\n({\n \ncollection\n:\n \ninvoices\n \n});\n\n\n\nNow you have an invoiceConnector, it will save the binded model in the collection \ninvoices\n.\n\n\nCreate your model\n\n\nconst\n \n{\n \nnewModel\n,\n \n}\n \n=\n \nrequire\n(\nilorm\n);\n\n\n\nconst\n \nmodelConfig\n \n=\n \n{\n\n  \nname\n:\n \ninvoices\n,\n \n// Optional, could be useful to know the model name\n\n  \nschema\n:\n \ninvoiceSchema\n,\n\n  \nconnector\n:\n \ninvoiceConnector\n,\n\n\n}\n\n\n\nconst\n \nInvoice\n \n=\n \nnewModel\n(\nmodelConfig\n);\n \n// Invoice Model is a class\n\n\n\nNow you have all you want : A model, you can manipulate your data\n\n\nManipulate account\n\n\nFind one invoice after first january 2017\nconst\n \ninvoice\n \n=\n \nawait\n \nInvoice\n.\nquery\n()\n\n    \n.\ncreatedAt\n.\ngreatherThan\n(\nnew\n \nDate\n(\n2017-01-01\n))\n\n    \n.\nfindOne\n();\n\n\n\n\nCreate a new invoice\nWith attribute :\n\nconst\n \ninvoice\n \n=\n \nnew\n \nInvoice\n();\n\n\ninvoice\n.\ncreatedAt\n \n=\n \nDate\n.\nnow\n();\n\n\ninvoice\n.\namount\n \n=\n \n300\n;\n\n\ninvoice\n.\nsave\n();\n\n\nUsing constructor :\n\nconst\n \ninvoice\n \n=\n \nnew\n \nInvoice\n({\n\n    \ncreatedAt\n:\n \nDate\n.\nnow\n(),\n\n    \namount\n:\n \n300\n,\n\n\n});\n\n\ninvoice\n.\nsave\n();\n\n\nLoad an invoice per _id \n remove it from database\nconst\n \ninvoice\n \n=\n \nawait\n \nInvoice\n.\ngetById\n(\nObjectId\n(\n2088181818\n));\n\n\n\ninvoice\n.\nremove\n();\n\n\n\n\nFull example\n\n\nconst\n \nMongoClient\n \n=\n \nrequire\n(\nmongodb\n);\n\n\nconst\n \nilorm\n \n=\n \nrequire\n(\nilorm\n);\n\n\nconst\n \nIlormMongo\n \n=\n \nrequire\n(\nilorm-connector-mongodb\n);\n\n\n\nconst\n \n{\n \nSchema\n,\n \nnewModel\n,\n \n}\n \n=\n \nilorm\n;\n\n\n\n// Declare schema :\n\n\nconst\n \ninvoiceSchema\n \n=\n \nnew\n \nSchema\n({\n\n  \ncreatedAt\n:\n \nSchema\n.\ndate\n(),\n\n  \namount\n:\n \nSchema\n.\nnumber\n()\n\n\n});\n\n\n\n\n// Declare you use ilormMongo (init plugin part of the connector) :\n\n\nilorm\n.\nuse\n(\nIlormMongo\n);\n\n\n\n// Create a database :\n\n\nconst\n \nmongoClient\n \n=\n \nawait\n \nMongoClient\n.\nconnect\n(\nDB_URL\n);\n\n\nconst\n \ndatabase\n \n=\n \nawait\n \nmongoClient\n.\ndb\n(\nilorm\n);\n\n\n\n// Create your Connector class binded with your database :\n\n\nconst\n \nMongoConnector\n \n=\n \nIlormMongo\n.\nfromClient\n(\ndatabase\n);\n\n\n\n// Create an instance of your connector. It will save in the collection: accounts ;\n\n\nconst\n \ninvoiceConnector\n \n=\n \nnew\n \nMongoConnector\n({\n \ncollection\n:\n \ninvoices\n \n});\n\n\n\nconst\n \nmodelConfig\n \n=\n \n{\n\n  \nname\n:\n \ninvoices\n,\n \n// Optional, could be useful to know the model name\n\n  \nschema\n:\n \ninvoiceSchema\n,\n\n  \nconnector\n:\n \ninvoiceConnector\n,\n\n\n}\n\n\n\nconst\n \nInvoice\n \n=\n \nnewModel\n(\nmodelConfig\n);\n \n// Invoice Model is a class", 
+            "title": "Quick start"
+        }, 
+        {
+            "location": "/quick_start/#quick-start", 
+            "text": "Ilorm are based on five core concepts : Connector, Model, Schema, SchemaField and Query.\n- Connectors are the definition which kind of database you use to store your data.\n- Model are class representing your data.\n- Schema define your model behavior (fields type)\n- SchemaField define the behavior of your data field.\n- Query is a powerful query builder tool to edit, delete, get data...", 
+            "title": "Quick start"
+        }, 
+        {
+            "location": "/quick_start/#install-ilorm", 
+            "text": "First install ilorm : npm install ilorm  After you can install the mongo-connector : npm install ilorm-connector-mongodb  You can use another connector if you use different kind of database.", 
+            "title": "Install ilorm"
+        }, 
+        {
+            "location": "/quick_start/#define-a-schema", 
+            "text": "To define your schema, just use the Schema class of ilorm const   {   Schema ,   }   =   require ( ilorm );  const   invoiceSchema   =   new   Schema ({ \n   createdAt :   Schema . date (), \n   amount :   Schema . number ()  });  \nWith this code, you have a basic schema with two properties :\n- createdAt which will be a date.\n- amount which will be a number.", 
+            "title": "Define a schema"
+        }, 
+        {
+            "location": "/quick_start/#prepare-your-connector", 
+            "text": "const   MongoClient   =   require ( mongodb );  const   ilorm   =   require ( ilorm );  const   IlormMongo   =   require ( ilorm-connector-mongodb );  // Declare you use ilormMongo (init plugin part of the connector) :  ilorm . use ( IlormMongo );  // Create a database :  const   mongoClient   =   await   MongoClient . connect ( DB_URL );  const   database   =   await   mongoClient . db ( ilorm );  // Create your Connector class binded with your database :  const   MongoConnector   =   IlormMongo . fromClient ( database );  // Create an instance of your connector. It will save in the collection: accounts ;  const   invoiceConnector   =   new   MongoConnector ({   collection :   invoices   });  \nNow you have an invoiceConnector, it will save the binded model in the collection  invoices .", 
+            "title": "Prepare your Connector"
+        }, 
+        {
+            "location": "/quick_start/#create-your-model", 
+            "text": "const   {   newModel ,   }   =   require ( ilorm );  const   modelConfig   =   { \n   name :   invoices ,   // Optional, could be useful to know the model name \n   schema :   invoiceSchema , \n   connector :   invoiceConnector ,  }  const   Invoice   =   newModel ( modelConfig );   // Invoice Model is a class  \nNow you have all you want : A model, you can manipulate your data", 
+            "title": "Create your model"
+        }, 
+        {
+            "location": "/quick_start/#manipulate-account", 
+            "text": "Find one invoice after first january 2017 const   invoice   =   await   Invoice . query () \n     . createdAt . greatherThan ( new   Date ( 2017-01-01 )) \n     . findOne ();   Create a new invoice With attribute : const   invoice   =   new   Invoice ();  invoice . createdAt   =   Date . now ();  invoice . amount   =   300 ;  invoice . save ();  Using constructor : const   invoice   =   new   Invoice ({ \n     createdAt :   Date . now (), \n     amount :   300 ,  });  invoice . save ();  Load an invoice per _id   remove it from database const   invoice   =   await   Invoice . getById ( ObjectId ( 2088181818 ));  invoice . remove ();", 
+            "title": "Manipulate account"
+        }, 
+        {
+            "location": "/quick_start/#full-example", 
+            "text": "const   MongoClient   =   require ( mongodb );  const   ilorm   =   require ( ilorm );  const   IlormMongo   =   require ( ilorm-connector-mongodb );  const   {   Schema ,   newModel ,   }   =   ilorm ;  // Declare schema :  const   invoiceSchema   =   new   Schema ({ \n   createdAt :   Schema . date (), \n   amount :   Schema . number ()  });  // Declare you use ilormMongo (init plugin part of the connector) :  ilorm . use ( IlormMongo );  // Create a database :  const   mongoClient   =   await   MongoClient . connect ( DB_URL );  const   database   =   await   mongoClient . db ( ilorm );  // Create your Connector class binded with your database :  const   MongoConnector   =   IlormMongo . fromClient ( database );  // Create an instance of your connector. It will save in the collection: accounts ;  const   invoiceConnector   =   new   MongoConnector ({   collection :   invoices   });  const   modelConfig   =   { \n   name :   invoices ,   // Optional, could be useful to know the model name \n   schema :   invoiceSchema , \n   connector :   invoiceConnector ,  }  const   Invoice   =   newModel ( modelConfig );   // Invoice Model is a class", 
+            "title": "Full example"
         }, 
         {
             "location": "/api_public/", 

@@ -1,0 +1,625 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.1">
+    
+    
+      
+        <title>Quick start - Ilorm documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.aa3de92b.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#quick-start" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Ilorm documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Ilorm documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Quick start
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/stombre/ilorm/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      stombre/ilorm
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Ilorm documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/stombre/ilorm/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      stombre/ilorm
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Quick start
+      </label>
+    
+    <a href="./" title="Quick start" class="md-nav__link md-nav__link--active">
+      Quick start
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-ilorm" title="Install ilorm" class="md-nav__link">
+    Install ilorm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-a-schema" title="Define a schema" class="md-nav__link">
+    Define a schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-your-connector" title="Prepare your Connector" class="md-nav__link">
+    Prepare your Connector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-model" title="Create your model" class="md-nav__link">
+    Create your model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulate-account" title="Manipulate account" class="md-nav__link">
+    Manipulate account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-example" title="Full example" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api_public/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Connectors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Connectors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../connectors/mongodb/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-ilorm" title="Install ilorm" class="md-nav__link">
+    Install ilorm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-a-schema" title="Define a schema" class="md-nav__link">
+    Define a schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-your-connector" title="Prepare your Connector" class="md-nav__link">
+    Prepare your Connector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-model" title="Create your model" class="md-nav__link">
+    Create your model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulate-account" title="Manipulate account" class="md-nav__link">
+    Manipulate account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-example" title="Full example" class="md-nav__link">
+    Full example
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stombre/ilorm/edit/master/docs/quick_start.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<p>Ilorm are based on five core concepts : Connector, Model, Schema, SchemaField and Query.
+- Connectors are the definition which kind of database you use to store your data.
+- Model are class representing your data.
+- Schema define your model behavior (fields type)
+- SchemaField define the behavior of your data field.
+- Query is a powerful query builder tool to edit, delete, get data...</p>
+<h2 id="install-ilorm">Install ilorm<a class="headerlink" href="#install-ilorm" title="Permanent link">&para;</a></h2>
+<p>First install ilorm :
+<div class="codehilite"><pre><span></span>npm install ilorm
+</pre></div></p>
+<p>After you can install the mongo-connector :
+<div class="codehilite"><pre><span></span>npm install ilorm-connector-mongodb
+</pre></div></p>
+<p>You can use another connector if you use different kind of database.</p>
+<h2 id="define-a-schema">Define a schema<a class="headerlink" href="#define-a-schema" title="Permanent link">&para;</a></h2>
+<p>To define your schema, just use the Schema class of ilorm
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span><span class="p">,</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">invoiceSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
+  <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">date</span><span class="p">(),</span>
+  <span class="nx">amount</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">number</span><span class="p">()</span>
+<span class="p">});</span>
+</pre></div>
+With this code, you have a basic schema with two properties :
+- createdAt which will be a date.
+- amount which will be a number.</p>
+<h2 id="prepare-your-connector">Prepare your Connector<a class="headerlink" href="#prepare-your-connector" title="Permanent link">&para;</a></h2>
+<p><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">MongoClient</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongodb&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ilorm</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">IlormMongo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm-connector-mongodb&#39;</span><span class="p">);</span>
+
+<span class="c1">// Declare you use ilormMongo (init plugin part of the connector) :</span>
+<span class="nx">ilorm</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">IlormMongo</span><span class="p">);</span>
+
+<span class="c1">// Create a database :</span>
+<span class="kr">const</span> <span class="nx">mongoClient</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">MongoClient</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">DB_URL</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">database</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">mongoClient</span><span class="p">.</span><span class="nx">db</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="c1">// Create your Connector class binded with your database :</span>
+<span class="kr">const</span> <span class="nx">MongoConnector</span> <span class="o">=</span> <span class="nx">IlormMongo</span><span class="p">.</span><span class="nx">fromClient</span><span class="p">(</span><span class="nx">database</span><span class="p">);</span>
+
+<span class="c1">// Create an instance of your connector. It will save in the collection: accounts ;</span>
+<span class="kr">const</span> <span class="nx">invoiceConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span> <span class="nx">collection</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span> <span class="p">});</span>
+</pre></div>
+Now you have an invoiceConnector, it will save the binded model in the collection <code>invoices</code>.</p>
+<h2 id="create-your-model">Create your model<a class="headerlink" href="#create-your-model" title="Permanent link">&para;</a></h2>
+<p><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">newModel</span><span class="p">,</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">modelConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span><span class="p">,</span> <span class="c1">// Optional, could be useful to know the model name</span>
+  <span class="nx">schema</span><span class="o">:</span> <span class="nx">invoiceSchema</span><span class="p">,</span>
+  <span class="nx">connector</span><span class="o">:</span> <span class="nx">invoiceConnector</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">Invoice</span> <span class="o">=</span> <span class="nx">newModel</span><span class="p">(</span><span class="nx">modelConfig</span><span class="p">);</span> <span class="c1">// Invoice Model is a class</span>
+</pre></div>
+Now you have all you want : A model, you can manipulate your data</p>
+<h2 id="manipulate-account">Manipulate account<a class="headerlink" href="#manipulate-account" title="Permanent link">&para;</a></h2>
+<details><summary>Find one invoice after first january 2017</summary><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">invoice</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">Invoice</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">createdAt</span><span class="p">.</span><span class="nx">greatherThan</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">findOne</span><span class="p">();</span>
+</pre></div>
+</details><details><summary>Create a new invoice</summary><p>With attribute :
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">invoice</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Invoice</span><span class="p">();</span>
+<span class="nx">invoice</span><span class="p">.</span><span class="nx">createdAt</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="nx">invoice</span><span class="p">.</span><span class="nx">amount</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+<span class="nx">invoice</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</pre></div></p><p>Using constructor :
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">invoice</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Invoice</span><span class="p">({</span>
+    <span class="nx">createdAt</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">(),</span>
+    <span class="nx">amount</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="nx">invoice</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</pre></div></p></details><details><summary>Load an invoice per _id &amp; remove it from database</summary><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">invoice</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">Invoice</span><span class="p">.</span><span class="nx">getById</span><span class="p">(</span><span class="nx">ObjectId</span><span class="p">(</span><span class="s1">&#39;2088181818&#39;</span><span class="p">));</span>
+
+<span class="nx">invoice</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+</pre></div>
+</details><h2 id="full-example">Full example<a class="headerlink" href="#full-example" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">MongoClient</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongodb&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ilorm</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">IlormMongo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm-connector-mongodb&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span><span class="p">,</span> <span class="nx">newModel</span><span class="p">,</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">ilorm</span><span class="p">;</span>
+
+<span class="c1">// Declare schema :</span>
+<span class="kr">const</span> <span class="nx">invoiceSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
+  <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">date</span><span class="p">(),</span>
+  <span class="nx">amount</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">number</span><span class="p">()</span>
+<span class="p">});</span>
+
+
+<span class="c1">// Declare you use ilormMongo (init plugin part of the connector) :</span>
+<span class="nx">ilorm</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">IlormMongo</span><span class="p">);</span>
+
+<span class="c1">// Create a database :</span>
+<span class="kr">const</span> <span class="nx">mongoClient</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">MongoClient</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">DB_URL</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">database</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">mongoClient</span><span class="p">.</span><span class="nx">db</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="c1">// Create your Connector class binded with your database :</span>
+<span class="kr">const</span> <span class="nx">MongoConnector</span> <span class="o">=</span> <span class="nx">IlormMongo</span><span class="p">.</span><span class="nx">fromClient</span><span class="p">(</span><span class="nx">database</span><span class="p">);</span>
+
+<span class="c1">// Create an instance of your connector. It will save in the collection: accounts ;</span>
+<span class="kr">const</span> <span class="nx">invoiceConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span> <span class="nx">collection</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span> <span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">modelConfig</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span><span class="p">,</span> <span class="c1">// Optional, could be useful to know the model name</span>
+  <span class="nx">schema</span><span class="o">:</span> <span class="nx">invoiceSchema</span><span class="p">,</span>
+  <span class="nx">connector</span><span class="o">:</span> <span class="nx">invoiceConnector</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">Invoice</span> <span class="o">=</span> <span class="nx">newModel</span><span class="p">(</span><span class="nx">modelConfig</span><span class="p">);</span> <span class="c1">// Invoice Model is a class</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../api_public/" title="API" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                API
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ed2cc613.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
