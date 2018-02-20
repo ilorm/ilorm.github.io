@@ -1126,8 +1126,10 @@
 <h3 id="exported-functions">Exported functions<a class="headerlink" href="#exported-functions" title="Permanent link">&para;</a></h3>
 <h4 id="ilormdeclaremodel">Ilorm.declareModel()<a class="headerlink" href="#ilormdeclaremodel" title="Permanent link">&para;</a></h4>
 <p>Declare model is used to change the Model associated with the given name. Could be used
-to define which Class will be instancied in each case.
-<div class="codehilite"><pre><span></span><span class="nx">ilorm</span><span class="p">.</span><span class="nx">declareModel</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">Model</span><span class="p">);</span>
+to define which Class will be instancied in each case.</p>
+<p>declareModel is already called in newModel, you need to invoke it, only if you overload
+the resulting class of a newModel call.
+<div class="codehilite"><pre><span></span><span class="nx">ilorm</span><span class="p">.</span><span class="nx">declareModel</span><span class="p">(</span><span class="nx">Model</span><span class="p">);</span>
 </pre></div></p>
 <table>
 <thead>
@@ -1139,21 +1141,26 @@ to define which Class will be instancied in each case.
 </thead>
 <tbody>
 <tr>
-<td align="center">name</td>
-<td align="center">String</td>
-<td>The name associated with the given model.</td>
-</tr>
-<tr>
 <td align="center">Model</td>
 <td align="center"><a href="#model">Model</a></td>
 <td>The Model to associate with the given name.</td>
 </tr>
 </tbody>
 </table>
-<details class="example"><summary>Example of declareModel</summary><div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">User</span> <span class="kr">extends</span> <span class="nx">newModel</span><span class="p">(</span><span class="nx">userParams</span><span class="p">);</span>
+<details class="example"><summary>Example of declareModel</summary><div class="codehilite"><pre><span></span><span class="nx">userParams</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+<span class="hll">   <span class="c1">// some other definition</span>
+</span><span class="p">};</span>
+<span class="kr">const</span> <span class="nx">BaseUser</span> <span class="o">=</span> <span class="nx">newModel</span><span class="p">(</span><span class="nx">userParams</span><span class="p">);</span>
 
-<span class="hll"><span class="nx">ilorm</span><span class="p">.</span><span class="nx">declareModel</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">User</span><span class="p">);</span>
-</span>
+<span class="kr">const</span> <span class="nx">User</span> <span class="kr">extends</span> <span class="nx">BaseUser</span>
+
+<span class="c1">// Before declareModel ilorm associate &#39;users&#39; with BaseUser</span>
+
+<span class="nx">ilorm</span><span class="p">.</span><span class="nx">declareModel</span><span class="p">(</span><span class="nx">User</span><span class="p">);</span>
+
+<span class="c1">// After ilorm associate &#39;users&#39; with User, BaseUser was replaced</span>
+
 <span class="c1">// Now you could reference the Model User as users in your schema :</span>
 <span class="kr">const</span> <span class="nx">friendSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
     <span class="nx">userA</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">reference</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">).</span><span class="nx">required</span><span class="p">(),</span>

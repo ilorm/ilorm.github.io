@@ -1,6 +1,12 @@
 # ilorm-connector-mongo
 
-The MongoDB connector is the Connector to use to mongoDB as storage for your ilorm model.
+The MongoDB connector is the Connector to use mongoDB as storage for your ilorm model.
+
+## Features
+- Add MongoDB as connector.
+- Add specifics MongoDB SchemaFields : Array, Map, Object and ObjectId.
+- Add specifics MongoDB query operator : push (on Array only).
+- Add Model.aggregate to build aggregation pipeline.
 
 ## How it works
 To use this connector :
@@ -48,4 +54,28 @@ const UserModel = newModel(modelFactoryParams);
 ## Schema 
 
 ## SchemaField
+### Array
+Array is used to define embed array in your Schema. You could define behavior of the 
+child element.
+```javascript
+// To store users in a array ;
+new Schema({
+  users: Schema.array({
+    firstName: Schema.String(),
+    lastName: Schema.string()
+  }),
+});
+```
 
+### Map
+Map is used to define Map in your Schema. A map is a key: value association.
+You can define behavior of the child element (the value of the array). And the format
+of your key.
+
+### Object
+Object is used to define embed Object in your Schema. You could define behavior of the 
+child element. 
+
+
+### ObjectId
+ObjectId is the ID system used by MongoDB.

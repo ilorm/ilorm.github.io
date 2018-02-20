@@ -17,20 +17,32 @@ const { Schema } = require('ilorm');
 #### Ilorm.declareModel()
 Declare model is used to change the Model associated with the given name. Could be used
 to define which Class will be instancied in each case.
+
+declareModel is already called in newModel, you need to invoke it, only if you overload
+the resulting class of a newModel call.
 ```javascript
-ilorm.declareModel(name, Model);
+ilorm.declareModel(Model);
 ```
 
 | Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
-| name | String | The name associated with the given model. |
 | Model | [Model](#model) | The Model to associate with the given name. |
 
 ??? example "Example of declareModel"
     ```javascript hl_lines="3"
-    const User extends newModel(userParams);
+    userParams = {
+       name: 'users',
+       // some other definition
+    };
+    const BaseUser = newModel(userParams);
+    
+    const User extends BaseUser
+    
+    // Before declareModel ilorm associate 'users' with BaseUser
         
-    ilorm.declareModel('users', User);
+    ilorm.declareModel(User);
+    
+    // After ilorm associate 'users' with User, BaseUser was replaced
     
     // Now you could reference the Model User as users in your schema :
     const friendSchema = new Schema({
