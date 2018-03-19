@@ -1,0 +1,874 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.5.1">
+    
+    
+      
+        <title>Create connector - Ilorm documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.aa3de92b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#create-a-connector" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Ilorm documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Ilorm documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Create connector
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/stombre/ilorm/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      stombre/ilorm
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Ilorm documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/stombre/ilorm/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      stombre/ilorm
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quick_start/" title="Quick start" class="md-nav__link">
+      Quick start
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../api_public/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Advanced
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Create connector
+      </label>
+    
+    <a href="./" title="Create connector" class="md-nav__link md-nav__link--active">
+      Create connector
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-connector-class" title="The connector class" class="md-nav__link">
+    The connector class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandatory-operation" title="Mandatory operation" class="md-nav__link">
+    Mandatory operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-related" title="Database related" class="md-nav__link">
+    Database related
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ilorm-query" title="Ilorm query" class="md-nav__link">
+    Ilorm query
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#querybuilder" title="queryBuilder" class="md-nav__link">
+    queryBuilder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatebuilder" title="updateBuilder" class="md-nav__link">
+    updateBuilder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-operation-to-implement" title="Database operation to implement" class="md-nav__link">
+    Database operation to implement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connector-factory" title="Connector factory" class="md-nav__link">
+    Connector factory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelfactory" title="modelFactory" class="md-nav__link">
+    modelFactory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryfactory" title="queryFactory" class="md-nav__link">
+    queryFactory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Connectors
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Connectors
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connectors/mongodb/" title="MongoDB" class="md-nav__link">
+      MongoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-connector-class" title="The connector class" class="md-nav__link">
+    The connector class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandatory-operation" title="Mandatory operation" class="md-nav__link">
+    Mandatory operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-related" title="Database related" class="md-nav__link">
+    Database related
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ilorm-query" title="Ilorm query" class="md-nav__link">
+    Ilorm query
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#querybuilder" title="queryBuilder" class="md-nav__link">
+    queryBuilder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatebuilder" title="updateBuilder" class="md-nav__link">
+    updateBuilder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-operation-to-implement" title="Database operation to implement" class="md-nav__link">
+    Database operation to implement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connector-factory" title="Connector factory" class="md-nav__link">
+    Connector factory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelfactory" title="modelFactory" class="md-nav__link">
+    modelFactory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryfactory" title="queryFactory" class="md-nav__link">
+    queryFactory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stombre/ilorm/edit/master/docs/advanced/create_connector.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="create-a-connector">Create a connector<a class="headerlink" href="#create-a-connector" title="Permanent link">&para;</a></h1>
+<h2 id="the-connector-class">The connector class<a class="headerlink" href="#the-connector-class" title="Permanent link">&para;</a></h2>
+<h3 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h3>
+<p>To create a connector, you need to implement a class Connector.</p>
+<p>The class Connector is always linked with a database
+The instance of the class is linked with a table, a collection or a subset of data.</p>
+<p>Example :</p>
+<ul>
+<li>
+<p>On a SQL database</p>
+<ul>
+<li>
+<p>The class is linked with the full database</p>
+</li>
+<li>
+<p>An instance of the class is linked with a table</p>
+</li>
+</ul>
+</li>
+<li>
+<p>On a MongoDB database</p>
+<ul>
+<li>
+<p>The class linked with the full database</p>
+</li>
+<li>
+<p>An instance of the class is linked with a collection</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mandatory-operation">Mandatory operation<a class="headerlink" href="#mandatory-operation" title="Permanent link">&para;</a></h3>
+<p>The class need to implement mandatory operation to be fully functional.
+The operations are divided into :</p>
+<ul>
+<li>
+<p>Database related : Update, Find, Create, Remove data</p>
+</li>
+<li>
+<p>Connector factory : The connector instantiate his own Query class or Model class to overwrite
+basic behavior.</p>
+</li>
+</ul>
+<h3 id="database-related">Database related<a class="headerlink" href="#database-related" title="Permanent link">&para;</a></h3>
+<h4 id="ilorm-query">Ilorm query<a class="headerlink" href="#ilorm-query" title="Permanent link">&para;</a></h4>
+<p>The majority of database related operation receive a Query instance as parameter.
+You need to use this query instance to create the same query in the database language
+to do it. The query have some useful method : queryBuilder and updateBuilder.</p>
+<h5 id="querybuilder">queryBuilder<a class="headerlink" href="#querybuilder" title="Permanent link">&para;</a></h5>
+<p>query.queryBuilder is use to restrict your query. You will put as parameter of queryBuilder
+a set of handler. Each handler should be called back (in function of the query).
+<div class="codehilite"><pre><span></span><span class="nx">query</span><span class="p">.</span><span class="nx">queryBuilder</span><span class="p">({</span>
+  <span class="c1">// On option will be called if skip &amp; limit was put :</span>
+  <span class="nx">onOption</span><span class="o">:</span> <span class="p">(</span><span class="nx">skip</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{},</span>
+
+  <span class="c1">// If an or operator is used on the query, this handler will be called</span>
+  <span class="c1">// The parameter is multiple query instance (each or branch)</span>
+  <span class="nx">onOr</span><span class="o">:</span> <span class="nx">arrayOfQuery</span> <span class="p">=&gt;</span> <span class="p">{},</span>
+
+  <span class="c1">// If one or more field are select, this handler will be called</span>
+  <span class="c1">// You need to restrict result only to the specified field</span>
+  <span class="nx">onSelect</span><span class="o">:</span> <span class="p">({</span> <span class="nx">field</span><span class="p">,</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{},</span>
+
+  <span class="c1">// Called (in order), to set the order of the result.</span>
+  <span class="c1">// Key is the target sorting key</span>
+  <span class="c1">// behavior precise if it&#39;s ascending or descending sorting</span>
+  <span class="nx">onSort</span><span class="o">:</span> <span class="p">({</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">behavior</span><span class="p">,</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{},</span>
+
+  <span class="c1">// Called per each query operation</span>
+  <span class="c1">// Key is the target key</span>
+  <span class="c1">// Operation is EQUAL, NOT_EQUAL...</span>
+  <span class="c1">// Value is the value applied to the operation</span>
+  <span class="nx">onOperator</span><span class="o">:</span> <span class="p">({</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">operation</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{}</span>
+<span class="p">});</span>
+</pre></div>
+Behavior and operation are equal to specific constants. The constants can be found in
+<code>ilorm-constants</code> in the QUERY constants :
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">QUERY</span><span class="p">,</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm-constants&#39;</span><span class="p">);</span>
+
+<span class="c1">// Possible value of operation on the onOperator handler :</span>
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">OPERATIONS</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">QUERY</span><span class="p">;</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">IS</span> <span class="c1">// equal (===)</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">IS_NOT</span> <span class="c1">// Not equal (!==)</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">IS_IN</span> <span class="c1">// The value is in the specified array of possibility</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">IS_NOT_IN</span> <span class="c1">// The value is not in the specified array of possibility</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">GREATHER_THAN</span> <span class="c1">// Superior of the value</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">LOWER_THAN</span> <span class="c1">// Inferior of the value</span>
+<span class="nx">OPERATION_GREATHER_OR_EQUAL_THAN</span> <span class="c1">// Superior or equal of the value</span>
+<span class="nx">OPERATION</span><span class="p">.</span><span class="nx">LOWER_OR_EQUAL_THAN</span> <span class="c1">// Inferior or equal of the value</span>
+
+<span class="c1">// Possible value of behavior on the onSort handler :</span>
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">SORT_BEHAVIOR</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">QUERY</span><span class="p">;</span>
+<span class="nx">SORT_BEHAVIOR</span><span class="p">.</span><span class="nx">ASCENDING</span> <span class="c1">// Ascending order</span>
+<span class="nx">SORT_BEHAVIOR</span><span class="p">.</span><span class="nx">DESCENDING</span> <span class="c1">// Descending order</span>
+</pre></div></p>
+<h5 id="updatebuilder">updateBuilder<a class="headerlink" href="#updatebuilder" title="Permanent link">&para;</a></h5>
+<p>query.updateBuilder is used to handle the update kind of query. Like the queryBuilder
+you need to give him handler to build your query
+<div class="codehilite"><pre><span></span><span class="nx">query</span><span class="p">.</span><span class="nx">updateBuilder</span><span class="p">({</span>
+  <span class="c1">// Apply an update operation</span>
+  <span class="c1">// Key is the targeted key</span>
+  <span class="c1">// Operator is the operation to make</span>
+  <span class="c1">// Value is the value to apply</span>
+  <span class="nx">onOperator</span><span class="o">:</span> <span class="p">({</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">operator</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{},</span>
+<span class="p">})</span>
+</pre></div></p>
+<p>You can use the OPERATIONS constant to compare with the operator
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">OPERATIONS</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm-constants&#39;</span><span class="p">).</span><span class="nx">QUERY</span><span class="p">;</span>
+
+<span class="c1">// Set the value associated with the key :</span>
+<span class="nx">OPERATIONS</span><span class="p">.</span><span class="nx">SET</span>
+
+<span class="c1">// Increment the value associated with the key (could be a negative number to decrement) :</span>
+<span class="nx">OPERATIONS</span><span class="p">.</span><span class="nx">ADD</span>
+</pre></div></p>
+<h4 id="database-operation-to-implement">Database operation to implement<a class="headerlink" href="#database-operation-to-implement" title="Permanent link">&para;</a></h4>
+<p>This part list all database related method to implement in your Connector.
+All operations are async :</p>
+<ul>
+<li>
+<p>count(query) : Return the number of element associated with the specified query.</p>
+</li>
+<li>
+<p>create(item|arrayOfItem) : The handler need to create all item into the database.</p>
+</li>
+<li>
+<p>find(query) : Return an array of all element linked with the specified query.</p>
+</li>
+<li>
+<p>findOne(query) : Return the first element linked with the specified query.</p>
+</li>
+<li>
+<p>remove(query) : Remove all element which match the query</p>
+</li>
+<li>
+<p>removeOne(query) : RemoveOne element which match the query</p>
+</li>
+<li>
+<p>stream(query) : Return a stream which stream all element associated with the query.</p>
+</li>
+<li>
+<p>update(query) : Update all element which match the query</p>
+</li>
+<li>
+<p>updateOne(query) : Update the first element which match the query</p>
+</li>
+</ul>
+<h3 id="connector-factory">Connector factory<a class="headerlink" href="#connector-factory" title="Permanent link">&para;</a></h3>
+<p>On your connector, you need to implement to more method :</p>
+<ul>
+<li>
+<p>modelFactory : Will return a Model class linked with your connector.</p>
+</li>
+<li>
+<p>queryFactory : Will return a Query class linked with your connector.</p>
+</li>
+</ul>
+<p>Both method take in parameter a base Class used as parent of the future class.</p>
+<h4 id="modelfactory">modelFactory<a class="headerlink" href="#modelfactory" title="Permanent link">&para;</a></h4>
+<p>With ilorm, every Model are inheritance of two class minimum :</p>
+<ul>
+<li>
+<p>BaseModel : The lowest level, this class is defined in ilorm core.</p>
+</li>
+<li>
+<p>FactoryModel : Overload BaseModel to specify name, schema, connector, plugin, linked with 
+the current model. This Class is generated to every model when calling ilorm.newModel. This
+class is defined in ilorm core too. This class is given in parameter of ModelFactory</p>
+</li>
+<li>
+<p>DatabaseModel : The last mandatory level, it's the result the modelFactory, you can add
+every kind of specific behavior of your database here.</p>
+</li>
+<li>
+<p>Plugin could overload BaseModel (you can have Model inheritance between BaseModel and
+FactoryModel).</p>
+</li>
+<li>The final user could overload your DatabaseModel.</li>
+</ul>
+<p>The signature of modelFactory is ;
+DatabaseModel result = Connector.modelFactory({ name, schema, ParentModel });</p>
+<ul>
+<li>
+<p>name : The name of the model, given by the developer who using your connector.</p>
+</li>
+<li>
+<p>schema : The schema binded with the current model.</p>
+</li>
+<li>
+<p>ParentModel : The FactoryModel (Your Model need to inherit from this parameter).</p>
+</li>
+</ul>
+<h4 id="queryfactory">queryFactory<a class="headerlink" href="#queryfactory" title="Permanent link">&para;</a></h4>
+<p>Query are similar to Model. Every query are composed by a BaseQuery (defined in core),
+overloaded by InternalQuery to specify the binded model. And your connector Query is the last
+part of the system. Plugin could overload BaseQuery.</p>
+<p>The signature of the queryFactory is :
+DatabaseQuery result = Connector.queryFactory({ schema, ParentQuery, });</p>
+<ul>
+<li>
+<p>schema : The schema binded with your query</p>
+</li>
+<li>
+<p>ParentQuery : The ParentQuery (your Query need to inherit from this parameter)</p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../api_public/" title="API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                API
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../connectors/mongodb/" title="MongoDB" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                MongoDB
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ed2cc613.js"></script>
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
