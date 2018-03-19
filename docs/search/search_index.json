@@ -2,13 +2,23 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation! \nQuick start guide\n.\n\n\nCome here to discover the \nIlorm API\n.\n\n\nStart with ilorm\n\n\n\n\nAPI\n\n\n\n\nAdvanced subject\n\n\nWork in progress\n\n\nResources\n\n\nConnectors\n\n\n\n\nMongoDB connector\n\n\n\n\nPlugins\n\n\nWork in progress", 
+            "text": "Ilorm index\n\n\nWelcome to the ilorm documentation! \nQuick start guide\n.\n\n\nIlorm is a javascript ORM build with modern technologies.\n\n\nCome here to discover the \nIlorm API\n.\n\n\nWhy a new ORM ?\n\n\n\n\nUse newest feature of ECMAScript (modern javascript).\n\n\nUniversal database connector (MongoDB, SQL, Redis, REST, CSV...).\n\n\nCould create powerful plugin using the \"class\" inheritance.\n\n\n\n\nFeatures\n\n\n\n\nUniversal connector to bind every kind of database\n\n\nPowerful plugin ecosystem\n\n\nQuery builder\n\n\nData validation\n\n\n\n\nStart with ilorm\n\n\n\n\nAPI\n\n\n\n\nAdvanced subject\n\n\n\n\nCreate a connector\n\n\n\n\nResources\n\n\nConnectors\n\n\n\n\nMongoDB connector\n\n\n\n\nPlugins\n\n\nWork in progress", 
             "title": "Home"
         }, 
         {
             "location": "/#ilorm-index", 
-            "text": "Welcome to the ilorm documentation!  Quick start guide .  Come here to discover the  Ilorm API .", 
+            "text": "Welcome to the ilorm documentation!  Quick start guide .  Ilorm is a javascript ORM build with modern technologies.  Come here to discover the  Ilorm API .", 
             "title": "Ilorm index"
+        }, 
+        {
+            "location": "/#why-a-new-orm", 
+            "text": "Use newest feature of ECMAScript (modern javascript).  Universal database connector (MongoDB, SQL, Redis, REST, CSV...).  Could create powerful plugin using the \"class\" inheritance.", 
+            "title": "Why a new ORM ?"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "Universal connector to bind every kind of database  Powerful plugin ecosystem  Query builder  Data validation", 
+            "title": "Features"
         }, 
         {
             "location": "/#start-with-ilorm", 
@@ -17,7 +27,7 @@
         }, 
         {
             "location": "/#advanced-subject", 
-            "text": "Work in progress", 
+            "text": "Create a connector", 
             "title": "Advanced subject"
         }, 
         {
@@ -319,6 +329,71 @@
             "location": "/api_public/#schemafieldstring", 
             "text": "Define the field as string.", 
             "title": "SchemaField/String"
+        }, 
+        {
+            "location": "/advanced/create_connector/", 
+            "text": "Create a connector\n\n\nThe connector class\n\n\nBasics\n\n\nTo create a connector, you need to implement a class Connector.\n\n\nThe class Connector is always linked with a database\nThe instance of the class is linked with a table, a collection or a subset of data.\n\n\nExample :\n\n\n\n\n\n\nOn a SQL database\n\n\n\n\n\n\nThe class is linked with the full database\n\n\n\n\n\n\nAn instance of the class is linked with a table\n\n\n\n\n\n\n\n\n\n\nOn a MongoDB database\n\n\n\n\n\n\nThe class linked with the full database\n\n\n\n\n\n\nAn instance of the class is linked with a collection\n\n\n\n\n\n\n\n\n\n\nMandatory operation\n\n\nThe class need to implement mandatory operation to be fully functional.\nThe operations are divided into :\n\n\n\n\n\n\nDatabase related : Update, Find, Create, Remove data\n\n\n\n\n\n\nConnector factory : The connector instantiate his own Query class or Model class to overwrite\nbasic behavior.\n\n\n\n\n\n\nDatabase related\n\n\nIlorm query\n\n\nThe majority of database related operation receive a Query instance as parameter.\nYou need to use this query instance to create the same query in the database language\nto do it. The query have some useful method : queryBuilder and updateBuilder.\n\n\nqueryBuilder\n\n\nquery.queryBuilder is use to restrict your query. You will put as parameter of queryBuilder\na set of handler. Each handler should be called back (in function of the query).\n\nquery\n.\nqueryBuilder\n({\n\n  \n// On option will be called if skip \n limit was put :\n\n  \nonOption\n:\n \n(\nskip\n,\n \nlimit\n)\n \n=\n \n{},\n\n\n  \n// If an or operator is used on the query, this handler will be called\n\n  \n// The parameter is multiple query instance (each or branch)\n\n  \nonOr\n:\n \narrayOfQuery\n \n=\n \n{},\n\n\n  \n// If one or more field are select, this handler will be called\n\n  \n// You need to restrict result only to the specified field\n\n  \nonSelect\n:\n \n({\n \nfield\n,\n \n})\n \n=\n \n{},\n\n\n  \n// Called (in order), to set the order of the result.\n\n  \n// Key is the target sorting key\n\n  \n// behavior precise if it\ns ascending or descending sorting\n\n  \nonSort\n:\n \n({\n \nkey\n,\n \nbehavior\n,\n \n})\n \n=\n \n{},\n\n\n  \n// Called per each query operation\n\n  \n// Key is the target key\n\n  \n// Operation is EQUAL, NOT_EQUAL...\n\n  \n// Value is the value applied to the operation\n\n  \nonOperator\n:\n \n({\n \nkey\n,\n \noperation\n,\n \nvalue\n,\n \n})\n \n=\n \n{}\n\n\n});\n\n\n\nBehavior and operation are equal to specific constants. The constants can be found in\n\nilorm-constants\n in the QUERY constants :\n\nconst\n \n{\n \nQUERY\n,\n \n}\n \n=\n \nrequire\n(\nilorm-constants\n);\n\n\n\n// Possible value of operation on the onOperator handler :\n\n\nconst\n \n{\n \nOPERATIONS\n \n}\n \n=\n \nQUERY\n;\n\n\nOPERATION\n.\nIS\n \n// equal (===)\n\n\nOPERATION\n.\nIS_NOT\n \n// Not equal (!==)\n\n\nOPERATION\n.\nIS_IN\n \n// The value is in the specified array of possibility\n\n\nOPERATION\n.\nIS_NOT_IN\n \n// The value is not in the specified array of possibility\n\n\nOPERATION\n.\nGREATHER_THAN\n \n// Superior of the value\n\n\nOPERATION\n.\nLOWER_THAN\n \n// Inferior of the value\n\n\nOPERATION_GREATHER_OR_EQUAL_THAN\n \n// Superior or equal of the value\n\n\nOPERATION\n.\nLOWER_OR_EQUAL_THAN\n \n// Inferior or equal of the value\n\n\n\n// Possible value of behavior on the onSort handler :\n\n\nconst\n \n{\n \nSORT_BEHAVIOR\n \n}\n \n=\n \nQUERY\n;\n\n\nSORT_BEHAVIOR\n.\nASCENDING\n \n// Ascending order\n\n\nSORT_BEHAVIOR\n.\nDESCENDING\n \n// Descending order\n\n\n\n\nupdateBuilder\n\n\nquery.updateBuilder is used to handle the update kind of query. Like the queryBuilder\nyou need to give him handler to build your query\n\nquery\n.\nupdateBuilder\n({\n\n  \n// Apply an update operation\n\n  \n// Key is the targeted key\n\n  \n// Operator is the operation to make\n\n  \n// Value is the value to apply\n\n  \nonOperator\n:\n \n({\n \nkey\n,\n \noperator\n,\n \nvalue\n,\n \n})\n \n=\n \n{},\n\n\n})\n\n\n\n\nYou can use the OPERATIONS constant to compare with the operator\n\nconst\n \n{\n \nOPERATIONS\n \n}\n \n=\n \nrequire\n(\nilorm-constants\n).\nQUERY\n;\n\n\n\n// Set the value associated with the key :\n\n\nOPERATIONS\n.\nSET\n\n\n\n// Increment the value associated with the key (could be a negative number to decrement) :\n\n\nOPERATIONS\n.\nADD\n\n\n\n\nDatabase operation to implement\n\n\nThis part list all database related method to implement in your Connector.\nAll operations are async :\n\n\n\n\n\n\ncount(query) : Return the number of element associated with the specified query.\n\n\n\n\n\n\ncreate(item|arrayOfItem) : The handler need to create all item into the database.\n\n\n\n\n\n\nfind(query) : Return an array of all element linked with the specified query.\n\n\n\n\n\n\nfindOne(query) : Return the first element linked with the specified query.\n\n\n\n\n\n\nremove(query) : Remove all element which match the query\n\n\n\n\n\n\nremoveOne(query) : RemoveOne element which match the query\n\n\n\n\n\n\nstream(query) : Return a stream which stream all element associated with the query.\n\n\n\n\n\n\nupdate(query) : Update all element which match the query\n\n\n\n\n\n\nupdateOne(query) : Update the first element which match the query\n\n\n\n\n\n\nConnector factory\n\n\nOn your connector, you need to implement to more method :\n\n\n\n\n\n\nmodelFactory : Will return a Model class linked with your connector.\n\n\n\n\n\n\nqueryFactory : Will return a Query class linked with your connector.\n\n\n\n\n\n\nBoth method take in parameter a base Class used as parent of the future class.\n\n\nmodelFactory\n\n\nWith ilorm, every Model are inheritance of two class minimum :\n\n\n\n\n\n\nBaseModel : The lowest level, this class is defined in ilorm core.\n\n\n\n\n\n\nFactoryModel : Overload BaseModel to specify name, schema, connector, plugin, linked with \nthe current model. This Class is generated to every model when calling ilorm.newModel. This\nclass is defined in ilorm core too. This class is given in parameter of ModelFactory\n\n\n\n\n\n\nDatabaseModel : The last mandatory level, it's the result the modelFactory, you can add\nevery kind of specific behavior of your database here.\n\n\n\n\n\n\nPlugin could overload BaseModel (you can have Model inheritance between BaseModel and\nFactoryModel).\n\n\n\n\nThe final user could overload your DatabaseModel.\n\n\n\n\nThe signature of modelFactory is ;\nDatabaseModel result = Connector.modelFactory({ name, schema, ParentModel });\n\n\n\n\n\n\nname : The name of the model, given by the developer who using your connector.\n\n\n\n\n\n\nschema : The schema binded with the current model.\n\n\n\n\n\n\nParentModel : The FactoryModel (Your Model need to inherit from this parameter).\n\n\n\n\n\n\nqueryFactory\n\n\nQuery are similar to Model. Every query are composed by a BaseQuery (defined in core),\noverloaded by InternalQuery to specify the binded model. And your connector Query is the last\npart of the system. Plugin could overload BaseQuery.\n\n\nThe signature of the queryFactory is :\nDatabaseQuery result = Connector.queryFactory({ schema, ParentQuery, });\n\n\n\n\n\n\nschema : The schema binded with your query\n\n\n\n\n\n\nParentQuery : The ParentQuery (your Query need to inherit from this parameter)", 
+            "title": "Create connector"
+        }, 
+        {
+            "location": "/advanced/create_connector/#create-a-connector", 
+            "text": "", 
+            "title": "Create a connector"
+        }, 
+        {
+            "location": "/advanced/create_connector/#the-connector-class", 
+            "text": "", 
+            "title": "The connector class"
+        }, 
+        {
+            "location": "/advanced/create_connector/#basics", 
+            "text": "To create a connector, you need to implement a class Connector.  The class Connector is always linked with a database\nThe instance of the class is linked with a table, a collection or a subset of data.  Example :    On a SQL database    The class is linked with the full database    An instance of the class is linked with a table      On a MongoDB database    The class linked with the full database    An instance of the class is linked with a collection", 
+            "title": "Basics"
+        }, 
+        {
+            "location": "/advanced/create_connector/#mandatory-operation", 
+            "text": "The class need to implement mandatory operation to be fully functional.\nThe operations are divided into :    Database related : Update, Find, Create, Remove data    Connector factory : The connector instantiate his own Query class or Model class to overwrite\nbasic behavior.", 
+            "title": "Mandatory operation"
+        }, 
+        {
+            "location": "/advanced/create_connector/#database-related", 
+            "text": "", 
+            "title": "Database related"
+        }, 
+        {
+            "location": "/advanced/create_connector/#ilorm-query", 
+            "text": "The majority of database related operation receive a Query instance as parameter.\nYou need to use this query instance to create the same query in the database language\nto do it. The query have some useful method : queryBuilder and updateBuilder.", 
+            "title": "Ilorm query"
+        }, 
+        {
+            "location": "/advanced/create_connector/#querybuilder", 
+            "text": "query.queryBuilder is use to restrict your query. You will put as parameter of queryBuilder\na set of handler. Each handler should be called back (in function of the query). query . queryBuilder ({ \n   // On option will be called if skip   limit was put : \n   onOption :   ( skip ,   limit )   =   {}, \n\n   // If an or operator is used on the query, this handler will be called \n   // The parameter is multiple query instance (each or branch) \n   onOr :   arrayOfQuery   =   {}, \n\n   // If one or more field are select, this handler will be called \n   // You need to restrict result only to the specified field \n   onSelect :   ({   field ,   })   =   {}, \n\n   // Called (in order), to set the order of the result. \n   // Key is the target sorting key \n   // behavior precise if it s ascending or descending sorting \n   onSort :   ({   key ,   behavior ,   })   =   {}, \n\n   // Called per each query operation \n   // Key is the target key \n   // Operation is EQUAL, NOT_EQUAL... \n   // Value is the value applied to the operation \n   onOperator :   ({   key ,   operation ,   value ,   })   =   {}  });  \nBehavior and operation are equal to specific constants. The constants can be found in ilorm-constants  in the QUERY constants : const   {   QUERY ,   }   =   require ( ilorm-constants );  // Possible value of operation on the onOperator handler :  const   {   OPERATIONS   }   =   QUERY ;  OPERATION . IS   // equal (===)  OPERATION . IS_NOT   // Not equal (!==)  OPERATION . IS_IN   // The value is in the specified array of possibility  OPERATION . IS_NOT_IN   // The value is not in the specified array of possibility  OPERATION . GREATHER_THAN   // Superior of the value  OPERATION . LOWER_THAN   // Inferior of the value  OPERATION_GREATHER_OR_EQUAL_THAN   // Superior or equal of the value  OPERATION . LOWER_OR_EQUAL_THAN   // Inferior or equal of the value  // Possible value of behavior on the onSort handler :  const   {   SORT_BEHAVIOR   }   =   QUERY ;  SORT_BEHAVIOR . ASCENDING   // Ascending order  SORT_BEHAVIOR . DESCENDING   // Descending order", 
+            "title": "queryBuilder"
+        }, 
+        {
+            "location": "/advanced/create_connector/#updatebuilder", 
+            "text": "query.updateBuilder is used to handle the update kind of query. Like the queryBuilder\nyou need to give him handler to build your query query . updateBuilder ({ \n   // Apply an update operation \n   // Key is the targeted key \n   // Operator is the operation to make \n   // Value is the value to apply \n   onOperator :   ({   key ,   operator ,   value ,   })   =   {},  })   You can use the OPERATIONS constant to compare with the operator const   {   OPERATIONS   }   =   require ( ilorm-constants ). QUERY ;  // Set the value associated with the key :  OPERATIONS . SET  // Increment the value associated with the key (could be a negative number to decrement) :  OPERATIONS . ADD", 
+            "title": "updateBuilder"
+        }, 
+        {
+            "location": "/advanced/create_connector/#database-operation-to-implement", 
+            "text": "This part list all database related method to implement in your Connector.\nAll operations are async :    count(query) : Return the number of element associated with the specified query.    create(item|arrayOfItem) : The handler need to create all item into the database.    find(query) : Return an array of all element linked with the specified query.    findOne(query) : Return the first element linked with the specified query.    remove(query) : Remove all element which match the query    removeOne(query) : RemoveOne element which match the query    stream(query) : Return a stream which stream all element associated with the query.    update(query) : Update all element which match the query    updateOne(query) : Update the first element which match the query", 
+            "title": "Database operation to implement"
+        }, 
+        {
+            "location": "/advanced/create_connector/#connector-factory", 
+            "text": "On your connector, you need to implement to more method :    modelFactory : Will return a Model class linked with your connector.    queryFactory : Will return a Query class linked with your connector.    Both method take in parameter a base Class used as parent of the future class.", 
+            "title": "Connector factory"
+        }, 
+        {
+            "location": "/advanced/create_connector/#modelfactory", 
+            "text": "With ilorm, every Model are inheritance of two class minimum :    BaseModel : The lowest level, this class is defined in ilorm core.    FactoryModel : Overload BaseModel to specify name, schema, connector, plugin, linked with \nthe current model. This Class is generated to every model when calling ilorm.newModel. This\nclass is defined in ilorm core too. This class is given in parameter of ModelFactory    DatabaseModel : The last mandatory level, it's the result the modelFactory, you can add\nevery kind of specific behavior of your database here.    Plugin could overload BaseModel (you can have Model inheritance between BaseModel and\nFactoryModel).   The final user could overload your DatabaseModel.   The signature of modelFactory is ;\nDatabaseModel result = Connector.modelFactory({ name, schema, ParentModel });    name : The name of the model, given by the developer who using your connector.    schema : The schema binded with the current model.    ParentModel : The FactoryModel (Your Model need to inherit from this parameter).", 
+            "title": "modelFactory"
+        }, 
+        {
+            "location": "/advanced/create_connector/#queryfactory", 
+            "text": "Query are similar to Model. Every query are composed by a BaseQuery (defined in core),\noverloaded by InternalQuery to specify the binded model. And your connector Query is the last\npart of the system. Plugin could overload BaseQuery.  The signature of the queryFactory is :\nDatabaseQuery result = Connector.queryFactory({ schema, ParentQuery, });    schema : The schema binded with your query    ParentQuery : The ParentQuery (your Query need to inherit from this parameter)", 
+            "title": "queryFactory"
         }, 
         {
             "location": "/connectors/mongodb/", 

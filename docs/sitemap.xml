@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-02-20</lastmod>
+     <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/quick_start/</loc>
-     <lastmod>2018-02-20</lastmod>
+     <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>/api_public/</loc>
-     <lastmod>2018-02-20</lastmod>
+     <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,8 +28,18 @@
     
         
     <url>
+     <loc>/advanced/create_connector/</loc>
+     <lastmod>2018-03-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
      <loc>/connectors/mongodb/</loc>
-     <lastmod>2018-02-20</lastmod>
+     <lastmod>2018-03-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
