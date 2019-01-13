@@ -175,6 +175,26 @@ Query.field.selectOnly();
         .findOne();
     ```
 
+## Query pagination
+### Query.skip()
+Skip a number of element before getting the result.
+```javascript
+Query.skip(nbToSkip);
+```
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| nbToSkip | Number | The amount of element to skip before starting gathering result. |
+
+### Query.limit()
+Limit the number of element impacted by the query.
+```javascript
+Query.limit(nbToImpact);
+```
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| nbToImpact | Number | The amount of element to fetch or update or remove. |
+
+
 ## Query running
 ### <small style="color:red;">(async)</small> Query.findOne()
 Execute the query, and returns one element which match it.

@@ -441,6 +441,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#query-pagination" title="Query pagination" class="md-nav__link">
+    Query pagination
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queryskip" title="Query.skip()" class="md-nav__link">
+    Query.skip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querylimit" title="Query.limit()" class="md-nav__link">
+    Query.limit()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#query-running" title="Query running" class="md-nav__link">
     Query running
   </a>
@@ -747,6 +774,33 @@
           <li class="md-nav__item">
   <a href="#queryfieldselectonly" title="Query.[field].selectOnly()" class="md-nav__link">
     Query.[field].selectOnly()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-pagination" title="Query pagination" class="md-nav__link">
+    Query pagination
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queryskip" title="Query.skip()" class="md-nav__link">
+    Query.skip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querylimit" title="Query.limit()" class="md-nav__link">
+    Query.limit()
   </a>
   
 </li>
@@ -1112,6 +1166,21 @@ Only the <b style="color:#283593">[field]</b> will be part of the output result.
 </pre></div>
 
 </details>
+<h2 id="query-pagination">Query pagination<a class="headerlink" href="#query-pagination" title="Permanent link">&para;</a></h2>
+<h3 id="queryskip">Query.skip()<a class="headerlink" href="#queryskip" title="Permanent link">&para;</a></h3>
+<p>Skip a number of element before getting the result.
+<div class="codehilite"><pre><span></span><span class="nx">Query</span><span class="p">.</span><span class="nx">skip</span><span class="p">(</span><span class="nx">nbToSkip</span><span class="p">);</span>
+</pre></div>
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| nbToSkip | Number | The amount of element to skip before starting gathering result. |</p>
+<h3 id="querylimit">Query.limit()<a class="headerlink" href="#querylimit" title="Permanent link">&para;</a></h3>
+<p>Limit the number of element impacted by the query.
+<div class="codehilite"><pre><span></span><span class="nx">Query</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="nx">nbToImpact</span><span class="p">);</span>
+</pre></div>
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| nbToImpact | Number | The amount of element to fetch or update or remove. |</p>
 <h2 id="query-running">Query running<a class="headerlink" href="#query-running" title="Permanent link">&para;</a></h2>
 <h3 id="async-queryfindone"><small style="color:red;">(async)</small> Query.findOne()<a class="headerlink" href="#async-queryfindone" title="Permanent link">&para;</a></h3>
 <p>Execute the query, and returns one element which match it.</p>
