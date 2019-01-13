@@ -4,7 +4,7 @@ Welcome to the ilorm documentation! [Quick start guide](./quick_start).
 
 Ilorm is a javascript ORM build with modern technologies.
 
-Come here to discover the [Ilorm API](./api_public).
+Come here to discover the [Ilorm API](./api/core).
 
 ### Why a new ORM ?
 - Use newest feature of ECMAScript (modern javascript).
@@ -18,7 +18,7 @@ Come here to discover the [Ilorm API](./api_public).
 - Data validation
 
 ## Start with ilorm
-* [API](./api_public)
+* [API](./api/core)
 
 ## Advanced subject
 * [Create a connector](./advanced/create_connector)

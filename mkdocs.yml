@@ -2,10 +2,16 @@ site_name: Ilorm documentation
 pages:
     - Home: index.md
     - Quick start: quick_start.md
-    - API: api_public.md
+    - API:
+        - Core: api/core.md
+        - Model: api/model.md
+        - Query: api/query.md
+        - Schema: api/schema.md
+        - Schema Field: api/schemaFields.md
     - Advanced:
         - Create connector: advanced/create_connector.md
     - Connectors:
+        - Intro: connectors/intro.md
         - MongoDB: connectors/mongodb.md
 theme:
   name: 'material'
