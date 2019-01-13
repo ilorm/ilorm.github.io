@@ -10,7 +10,7 @@ are defined as attribute of the Query. You can split your query into two things 
 - The query building part : You choose what your query will do.
 - The query run part : You choose the operation to do and execute the query.
 
-### Query building
+## Query building
 Query building are in function of the field of your schema. All method are children of
 attribute defined in your schema.
 
@@ -30,7 +30,7 @@ attribute defined in your schema.
         .findOne();    
     ```
 
-#### Query.<small style="color:#283593">[field]</small>.is()
+### Query.<small style="color:#283593">[field]</small>.is()
 Check if the <b style="color:#283593">[field]</b> is equal of the specified value.
 ```javascript
 Query.field.is(value);
@@ -41,7 +41,7 @@ Returns a query to chain call.
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be equal of this value. |
 
-#### Query.<small style="color:#283593">[field]</small>.isNot()
+### Query.<small style="color:#283593">[field]</small>.isNot()
 Check if the <b style="color:#283593">[field]</b> is not equal of the specified value.
 ```javascript
 Query.field.isNot(value);
@@ -52,7 +52,7 @@ Returns a query to chain call.
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be different of this value. |
 
-#### Query.<small style="color:#283593">[field]</small>.isIn()
+### Query.<small style="color:#283593">[field]</small>.isIn()
 Check if the <b style="color:#283593">[field]</b> is a member of the parameter array
 ```javascript
 Query.field.isIn(arrayOfValue);
@@ -63,7 +63,7 @@ Returns a query to chain call.
 |:----------------:|:-------:| ------------------------ |
 | arrayOfValue | Array.<Mixing\> | The field need to be equal at one array element. |
 
-#### Query.<small style="color:#283593">[field]</small>.isNotIn()
+### Query.<small style="color:#283593">[field]</small>.isNotIn()
 Check if the <b style="color:#283593">[field]</b> is not one of the array value.
 ```javascript
 Query.field.isNotIn(arrayOfValue);
@@ -74,7 +74,7 @@ Returns a query to chain call.
 |:----------------:|:-------:| ------------------------ |
 | arrayOfValue | Array.<Mixing\> | The field need to be different of each array element. |
 
-#### Query.<small style="color:#283593">[field]</small>.greaterThan()
+### Query.<small style="color:#283593">[field]</small>.greaterThan()
 Check if the <b style="color:#283593">[field]</b> is greater than the specified value.
 ```javascript
 Query.field.greaterThan(value);
@@ -88,7 +88,7 @@ Returns a query to chain call.
 !!! info
     Only work with SchemaField/Number or SchemaField/Date (or with some plugin SchemaField).
     
-#### Query.<small style="color:#283593">[field]</small>.lowerThan()
+### Query.<small style="color:#283593">[field]</small>.lowerThan()
 Check if the <b style="color:#283593">[field]</b> is lower than the specified value.
 ```javascript
 Query.field.lowerThan(value);
@@ -102,7 +102,7 @@ Returns a query to chain call.
 !!! info
     Only work with SchemaField/Number or SchemaField/Date (or with some plugin SchemaField).
 
-#### Query.<small style="color:#283593">[field]</small>.greaterOrEqualThan()
+### Query.<small style="color:#283593">[field]</small>.greaterOrEqualThan()
 Check if the <b style="color:#283593">[field]</b> is equal or greater than the 
 specified value.
 ```javascript
@@ -117,7 +117,7 @@ Returns a query to chain call.
 !!! info
     Only work with SchemaField/Number or SchemaField/Date (or with some plugin SchemaField).
 
-#### Query.<small style="color:#283593">[field]</small>.lowerOrEqualThan()
+### Query.<small style="color:#283593">[field]</small>.lowerOrEqualThan()
 Check if the <b style="color:#283593">[field]</b> is equal or lower than
 specified value.
 ```javascript
@@ -132,7 +132,7 @@ Returns a query to chain call.
 !!! info
     Only work with SchemaField/Number or SchemaField/Date (or with some plugin SchemaField).
 
-#### Query.<small style="color:#283593">[field]</small>.between()
+### Query.<small style="color:#283593">[field]</small>.between()
 Check if the <b style="color:#283593">[field]</b> is between min and max.
 ```javascript
 Query.field.between(min, max);
@@ -147,8 +147,36 @@ Returns a query to chain call.
 !!! info
     Only work with SchemaField/Number or SchemaField/Date (or with some plugin SchemaField).
 
-### Query running
-#### <small style="color:red;">(async)</small> Query.findOne()
+## Select specific fields
+### Query.<small style="color:#283593">[field]</small>.select()
+Use to target specific field to be returned by the query.
+The <b style="color:#283593">[field]</b> will be part of the output result.
+```javascript
+Query.field.select();
+```
+
+!!!info
+    - <b style="color:red;">The json object resulting of the query will not be an instance anymore!</b>
+    - If you want to select only one field, you could use selectOnly
+
+### Query.<small style="color:#283593">[field]</small>.selectOnly()
+Use to target specific field to be returned by the query.
+Only the <b style="color:#283593">[field]</b> will be part of the output result.
+
+```javascript
+Query.field.selectOnly();
+```
+
+??? example "Example of selectOnly"
+    ```javascript
+    const email = await User.query()
+        ._id.is(TARGET_ID)
+        .email.selectOnly()
+        .findOne();
+    ```
+
+## Query running
+### <small style="color:red;">(async)</small> Query.findOne()
 Execute the query, and returns one element which match it.
 
 ```javascript
@@ -156,7 +184,7 @@ const instance = await query.findOne();
 ```
 Return one instance which match the query.
 
-#### <small style="color:red;">(async)</small> Query.find()
+### <small style="color:red;">(async)</small> Query.find()
 Execute the query, and returns one array containing all elements which match the query.
 
 ```javascript
@@ -164,7 +192,7 @@ const arrayOfInstances = await query.find();
 ```
 Return all instance which match the query.
 
-#### <small style="color:red;">(async)</small> Query.stream()
+### <small style="color:red;">(async)</small> Query.stream()
 Execute the query, and returns the stream of all elements matching the query
 
 ```javascript
@@ -172,7 +200,7 @@ const streamOfInstances = await query.stream();
 ```
 Return a stream containing all elements matching the query.
 
-#### <small style="color:red;">(async)</small> Query.count()
+### <small style="color:red;">(async)</small> Query.count()
 Execute the query, and return how many item match the query.
 
 ```javascript
@@ -180,10 +208,10 @@ const numberOfInstance = await query.count();
 ```
 Return the number of instance which match the query.
 
-#### <small style="color:red;">(async)</small> Query.updateOne()
+### <small style="color:red;">(async)</small> Query.updateOne()
 
-#### <small style="color:red;">(async)</small> Query.update()
+### <small style="color:red;">(async)</small> Query.update()
 
-#### <small style="color:red;">(async)</small> Query.removeOne()
+### <small style="color:red;">(async)</small> Query.removeOne()
 
-#### <small style="color:red;">(async)</small> Query.remove()
+### <small style="color:red;">(async)</small> Query.remove()
