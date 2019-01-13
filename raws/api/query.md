@@ -194,6 +194,7 @@ Skip a number of element before getting the result.
 ```javascript
 Query.skip(nbToSkip);
 ```
+
 | Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | nbToSkip | Number | The amount of element to skip before starting gathering result. |
@@ -203,6 +204,7 @@ Limit the number of element impacted by the query.
 ```javascript
 Query.limit(nbToImpact);
 ```
+
 | Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | nbToImpact | Number | The amount of element to fetch or update or remove. |
