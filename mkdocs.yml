@@ -1,5 +1,5 @@
 site_name: Ilorm documentation
-pages:
+nav:
     - Home: index.md
     - Quick start: quick_start.md
     - API:
@@ -18,8 +18,8 @@ theme:
   palette:
     primary: 'blue'
     accent: 'light blue'
-repo_name: 'stombre/ilorm'
-repo_url: 'https://github.com/stombre/ilorm'
+repo_name: 'ilorm/ilorm.github.io'
+repo_url: 'https://github.com/ilorm/ilorm.github.io'
 docs_dir: 'raws'
 site_dir: 'docs'
 markdown_extensions:
