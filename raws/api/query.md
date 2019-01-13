@@ -175,6 +175,19 @@ Query.field.selectOnly();
         .findOne();
     ```
 
+## Query sorting
+### Query.<small style="color:#283593">[field]</small>.useAsSortAsc()
+Sorting the result ascending of the query by the given field.
+```javascript
+Query.field.useAsSortAsc();
+```
+
+### Query.<small style="color:#283593">[field]</small>.useAsSortDesc()
+Sorting the result descending of the query by the given field.
+```javascript
+Query.field.useAsSortDesc();
+```
+
 ## Query pagination
 ### Query.skip()
 Skip a number of element before getting the result.
