@@ -25,6 +25,7 @@ Come here to discover the [Ilorm API](./api/core).
 
 ## Resources
 ### Connectors
+* [Knex connector](./connectors/knex) (Support MySQL, PostgreSQL, Oracle, Redshift, MariaDB, SQLite ...).
 * [MongoDB connector](./connectors/mongodb)
 
 ### Plugins

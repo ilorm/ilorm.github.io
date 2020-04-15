@@ -175,6 +175,27 @@ Query.field.selectOnly();
         .findOne();
     ```
 
+### query.or()
+Creating branch.
+```javascript
+Query.or(orHandler)
+```
+
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| orHandler | Function | Take a function in parameter used to build subquery |
+
+??? example "Example of or"
+    ```javascript
+    const email = await User.query()
+        .or(orBranch => {
+          orBranch().email.is('email');
+          orBranch().email.is('alternativeEmail');
+        })
+        .findOne();
+    ```
+
+
 ## Query sorting
 ### Query.<small style="color:#283593">[field]</small>.useAsSortAsc()
 Sorting the result ascending of the query by the given field.

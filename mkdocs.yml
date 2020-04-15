@@ -12,14 +12,15 @@ nav:
         - Create connector: advanced/create_connector.md
     - Connectors:
         - Intro: connectors/intro.md
+        - Knex: connectors/knex.md
         - MongoDB: connectors/mongodb.md
 theme:
   name: 'material'
   palette:
     primary: 'blue'
     accent: 'light blue'
-repo_name: 'ilorm/ilorm.github.io'
-repo_url: 'https://github.com/ilorm/ilorm.github.io'
+repo_name: 'ilorm'
+repo_url: 'https://github.com/ilorm/core'
 docs_dir: 'raws'
 site_dir: 'docs'
 markdown_extensions:
