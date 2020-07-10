@@ -21,7 +21,7 @@ theme:
     accent: 'light blue'
 repo_name: 'ilorm'
 repo_url: 'https://github.com/ilorm/core'
-docs_dir: 'raws'
+docs_dir: 'source'
 site_dir: 'docs'
 markdown_extensions:
   - admonition
