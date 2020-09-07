@@ -19,7 +19,7 @@ Return a query instance linked with the current Model.
     
     ```
 
-### <small style="color:blue;">(static)</small><small style="color:red;">(async)</small> Model.getById()
+### <small style="color:blue;">(static)</small><small style="color:red;">(async)</small> Model.getById()
 Get an instance of the model by it's Id.
 ```javascript
 const modelInstance = await Model.getById(id);
@@ -40,7 +40,7 @@ Save the current instance into the database.
 await modelInstance.save();
 ```
 
-### <small style="color:red;">(async)</small> Model.remove()
+### <small style="color:red;">(async)</small> Model.remove()
 Remove the current instance from the database.
 
 ```javascript
