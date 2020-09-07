@@ -8,6 +8,7 @@ nav:
         - Query: api/query.md
         - Schema: api/schema.md
         - Schema Field: api/schemaFields.md
+        - Transaction: api/transaction.md
     - Advanced:
         - Create connector: advanced/create_connector.md
     - Connectors:
