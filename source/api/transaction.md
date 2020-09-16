@@ -57,11 +57,12 @@ Transaction.run(async () => {
 // If node does not support local storage
 Transaction.run(async (transaction) => {
   // Every ilorm stuff done here, are managed by the transaction;
-  const invoice = await Invoice.query({ transaction })
+  const invoice = await Invoice.query({ transaction }) // First way to bind a transaction to a query
     .id.is(invoiceId)
     .findOne();
 
-  const userAcount = await Account.query({ transaction })
+  const userAcount = await Account.query()
+    .transaction(transaction) // Alternative way to bind a transaction to a query
     .userId.is(invoice.userId)
     .findOne();
  

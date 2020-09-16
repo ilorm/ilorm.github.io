@@ -3,7 +3,7 @@ Query is a class which could be only instancied with the
 [query static method of model](../model#static-modelquery).
 
 Query is a query builder used to run operation on your database. Like find an instance
-or update multiple instance.
+or update multiple instances.
 
 Query work directly in function of your schema. Every field declared on your schema
 are defined as attribute of the Query. You can split your query into two things :
@@ -30,6 +30,22 @@ attribute defined in your schema.
         .findOne();    
     ```
 
+### new Query({ transaction, })
+Create a transaction, transaction can not be created directly. You need to use
+Model.query().
+
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| transaction | Transaction | Bind a transaction to the query, you could use Query.transaction for doing the same |
+
+### Query.transaction(transaction)
+Bind a transaction to the query.
+
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| transaction | Transaction | Bind a transaction to the query, you could use Query.transaction for doing the same |
+
+
 ### Query.<small style="color:#283593">[field]</small>.is()
 Check if the <b style="color:#283593">[field]</b> is equal of the specified value.
 ```javascript
@@ -37,7 +53,7 @@ Query.field.is(value);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be equal of this value. |
 
@@ -48,7 +64,7 @@ Query.field.isNot(value);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be different of this value. |
 
@@ -59,7 +75,7 @@ Query.field.isIn(arrayOfValue);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | arrayOfValue | Array.<Mixing\> | The field need to be equal at one array element. |
 
@@ -70,7 +86,7 @@ Query.field.isNotIn(arrayOfValue);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | arrayOfValue | Array.<Mixing\> | The field need to be different of each array element. |
 
@@ -81,7 +97,7 @@ Query.field.greaterThan(value);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be greater than value. |
 
@@ -95,7 +111,7 @@ Query.field.lowerThan(value);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be lower than value. |
 
@@ -110,7 +126,7 @@ Query.field.greaterOrEqualThan(value);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be equal or grater than value. |
 
@@ -125,7 +141,7 @@ Query.field.lowerOrEqualThan(value);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | value | Mixing | The field need to be equal or lower than value. |
 
@@ -139,7 +155,7 @@ Query.field.between(min, max);
 ```
 Returns a query to chain call.
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | min | Mixing | The field need to be greater than min. |
 | max | Mixing | The field need to be lower than max. |
@@ -181,7 +197,7 @@ Creating branch.
 Query.or(orHandler)
 ```
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | orHandler | Function | Take a function in parameter used to build subquery |
 
@@ -216,7 +232,7 @@ Skip a number of element before getting the result.
 Query.skip(nbToSkip);
 ```
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | nbToSkip | Number | The amount of element to skip before starting gathering result. |
 
@@ -226,7 +242,7 @@ Limit the number of element impacted by the query.
 Query.limit(nbToImpact);
 ```
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | nbToImpact | Number | The amount of element to fetch or update or remove. |
 
