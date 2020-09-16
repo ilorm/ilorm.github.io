@@ -302,6 +302,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#new-query-transaction" class="md-nav__link">
+    new Query({ transaction, })
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querytransactiontransaction" class="md-nav__link">
+    Query.transaction(transaction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#queryfieldis" class="md-nav__link">
     Query.[field].is()
   </a>
@@ -557,6 +571,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../transaction/" title="Transaction" class="md-nav__link">
+      Transaction
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -702,6 +728,20 @@
   
     <nav class="md-nav" aria-label="Query building">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-query-transaction" class="md-nav__link">
+    new Query({ transaction, })
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querytransactiontransaction" class="md-nav__link">
+    Query.transaction(transaction)
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#queryfieldis" class="md-nav__link">
@@ -952,7 +992,7 @@
 <p>Query is a class which could be only instancied with the
 <a href="../model#static-modelquery">query static method of model</a>.</p>
 <p>Query is a query builder used to run operation on your database. Like find an instance
-or update multiple instance.</p>
+or update multiple instances.</p>
 <p>Query work directly in function of your schema. Every field declared on your schema
 are defined as attribute of the Query. You can split your query into two things :
 - The query building part : You choose what your query will do.
@@ -974,6 +1014,43 @@ attribute defined in your schema.</p>
     <span class="p">.</span><span class="nx">findOne</span><span class="p">();</span>    
 </code></pre></div></p>
 </div>
+<h3 id="new-query-transaction">new Query({ transaction, })<a class="headerlink" href="#new-query-transaction" title="Permanent link">&para;</a></h3>
+<p>Create a transaction, transaction can not be created directly. You need to use
+Model.query().</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">transaction</td>
+<td align="center">Transaction</td>
+<td>Bind a transaction to the query, you could use Query.transaction for doing the same</td>
+</tr>
+</tbody>
+</table>
+<h3 id="querytransactiontransaction">Query.transaction(transaction)<a class="headerlink" href="#querytransactiontransaction" title="Permanent link">&para;</a></h3>
+<p>Bind a transaction to the query.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">transaction</td>
+<td align="center">Transaction</td>
+<td>Bind a transaction to the query, you could use Query.transaction for doing the same</td>
+</tr>
+</tbody>
+</table>
 <h3 id="queryfieldis">Query.<small style="color:#283593">[field]</small>.is()<a class="headerlink" href="#queryfieldis" title="Permanent link">&para;</a></h3>
 <p>Check if the <b style="color:#283593">[field]</b> is equal of the specified value.
 <div class="highlight"><pre><span></span><code><span class="nx">Query</span><span class="p">.</span><span class="nx">field</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
@@ -983,7 +1060,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1004,7 +1081,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1025,7 +1102,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1046,7 +1123,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1067,7 +1144,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1092,7 +1169,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1118,7 +1195,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1144,7 +1221,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1169,7 +1246,7 @@ Returns a query to chain call.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1224,7 +1301,7 @@ Only the <b style="color:#283593">[field]</b> will be part of the output result.
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1263,7 +1340,7 @@ Only the <b style="color:#283593">[field]</b> will be part of the output result.
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1283,7 +1360,7 @@ Only the <b style="color:#283593">[field]</b> will be part of the output result.
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
