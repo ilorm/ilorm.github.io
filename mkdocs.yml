@@ -12,6 +12,7 @@ nav:
         - Transaction: api/transaction.md
     - Advanced:
         - Create connector: advanced/create_connector.md
+        - Create a plugin: advanced/create_plugin.md
     - Connectors:
         - Intro: connectors/intro.md
         - Knex: connectors/knex.md
