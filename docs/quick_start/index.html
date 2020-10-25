@@ -619,7 +619,7 @@ With this code, you have a basic schema with two properties :
 <span class="kr">const</span> <span class="nx">MongoConnector</span> <span class="o">=</span> <span class="nx">IlormMongo</span><span class="p">.</span><span class="nx">fromClient</span><span class="p">(</span><span class="nx">database</span><span class="p">);</span>
 
 <span class="c1">// Create an instance of your connector. It will save in the collection: accounts ;</span>
-<span class="kr">const</span> <span class="nx">invoiceConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span> <span class="nx">collection</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">invoiceConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span> <span class="nx">sourceName</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span> <span class="p">});</span>
 </code></pre></div>
 Now you have an invoiceConnector, it will save the binded model in the collection <code>invoices</code>.</p>
 <h2 id="create-your-model">Create your model<a class="headerlink" href="#create-your-model" title="Permanent link">&para;</a></h2>
@@ -686,7 +686,7 @@ Now you have all you want : A model, you can manipulate your data</p>
 <span class="kr">const</span> <span class="nx">MongoConnector</span> <span class="o">=</span> <span class="nx">IlormMongo</span><span class="p">.</span><span class="nx">fromClient</span><span class="p">(</span><span class="nx">database</span><span class="p">);</span>
 
 <span class="c1">// Create an instance of your connector. It will save in the collection: accounts ;</span>
-<span class="kr">const</span> <span class="nx">invoiceConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span> <span class="nx">collection</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">invoiceConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span> <span class="nx">sourceName</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span> <span class="p">});</span>
 
 <span class="kr">const</span> <span class="nx">modelConfig</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;invoices&#39;</span><span class="p">,</span> <span class="c1">// Optional, could be useful to know the model name</span>

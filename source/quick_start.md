@@ -51,7 +51,7 @@ const database = await mongoClient.db('ilorm');
 const MongoConnector = IlormMongo.fromClient(database);
 
 // Create an instance of your connector. It will save in the collection: accounts ;
-const invoiceConnector = new MongoConnector({ collection: 'invoices' });
+const invoiceConnector = new MongoConnector({ sourceName: 'invoices' });
 ```
 Now you have an invoiceConnector, it will save the binded model in the collection `invoices`.
 
@@ -131,7 +131,7 @@ const database = await mongoClient.db('ilorm');
 const MongoConnector = IlormMongo.fromClient(database);
 
 // Create an instance of your connector. It will save in the collection: accounts ;
-const invoiceConnector = new MongoConnector({ collection: 'invoices' });
+const invoiceConnector = new MongoConnector({ sourceName: 'invoices' });
 
 const modelConfig = {
   name: 'invoices', // Optional, could be useful to know the model name

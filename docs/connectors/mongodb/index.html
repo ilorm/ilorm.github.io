@@ -720,12 +720,12 @@ between your database and your project. You can create it with a basic mongo cli
 </code></pre></div></p>
 </li>
 <li>
-<p>Finally you need to choose the collection used to store your model :
+<p>Finally, you need to choose the collection used to store your model :
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">modelFactoryParams</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
   <span class="nx">schema</span><span class="o">:</span> <span class="nx">userSchema</span><span class="p">,</span>
   <span class="nx">connector</span><span class="o">:</span> <span class="k">new</span> <span class="nx">MongoConnector</span><span class="p">({</span>
-    <span class="nx">collectionName</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="nx">sourceName</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
   <span class="p">}),</span>
 <span class="p">};</span>
 
@@ -740,7 +740,7 @@ between your database and your project. You can create it with a basic mongo cli
 <h2 id="schema">Schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h2>
 <h2 id="schemafield">SchemaField<a class="headerlink" href="#schemafield" title="Permanent link">&para;</a></h2>
 <h3 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h3>
-<p>Array is used to define embed array in your Schema. You could define behavior of the 
+<p>Array is used to define an embedded array in your Schema. You could define behavior of the 
 child element.
 <div class="highlight"><pre><span></span><code><span class="c1">// To store users in a array ;</span>
 <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>

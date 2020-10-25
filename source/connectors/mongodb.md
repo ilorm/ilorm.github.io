@@ -32,13 +32,13 @@ const database = await mongoClient.db('ilorm');
 const MongoConnector = ilormMongo.fromClient(database);
 ```
 
-- Finally you need to choose the collection used to store your model :
+- Finally, you need to choose the collection used to store your model :
 ```javascript
 const modelFactoryParams = {
   name: 'users',
   schema: userSchema,
   connector: new MongoConnector({
-    collectionName: 'users',
+    sourceName: 'users',
   }),
 };
 
@@ -55,7 +55,7 @@ const UserModel = newModel(modelFactoryParams);
 
 ## SchemaField
 ### Array
-Array is used to define embed array in your Schema. You could define behavior of the 
+Array is used to define an embedded array in your Schema. You could define behavior of the 
 child element.
 ```javascript
 // To store users in a array ;

@@ -562,7 +562,7 @@ between your database and your project. You need knex to achieve that:
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">modelFactoryParams</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
   <span class="nx">schema</span><span class="o">:</span> <span class="nx">userSchema</span><span class="p">,</span>
-  <span class="nx">connector</span><span class="o">:</span>  <span class="k">new</span> <span class="nx">knexConnection</span><span class="p">({</span> <span class="nx">tableName</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span> <span class="p">}),</span>
+  <span class="nx">connector</span><span class="o">:</span>  <span class="k">new</span> <span class="nx">knexConnection</span><span class="p">({</span> <span class="nx">sourceName</span><span class="o">:</span> <span class="s1">&#39;users&#39;</span> <span class="p">}),</span>
 <span class="p">};</span>
 
 <span class="kr">const</span> <span class="nx">UserModel</span> <span class="o">=</span> <span class="nx">newModel</span><span class="p">(</span><span class="nx">modelFactoryParams</span><span class="p">);</span>

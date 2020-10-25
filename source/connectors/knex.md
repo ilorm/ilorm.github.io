@@ -41,7 +41,7 @@ const knexConnection = IlormKnex.fromKnex(knex);
 const modelFactoryParams = {
   name: 'users',
   schema: userSchema,
-  connector:  new knexConnection({ tableName: 'users' }),
+  connector:  new knexConnection({ sourceName: 'users' }),
 };
 
 const UserModel = newModel(modelFactoryParams);
