@@ -30,6 +30,12 @@ Return the instance associated with the given id.
 |:----------------:|:-------:|:-------:| ------------------------ |
 | id | Mixing |  | The id of the instance to get. |
 
+### <small style="color:blue;">(static)</small> Model.id(ids)
+Create a [model Id](../model_id) linked with the ids parameter.
+
+| Parameter        | Type    | Default | Description              |
+|:----------------:|:-------:|:-------:| ------------------------ |
+| ids | Mixing |  | Create a Model_Id linked with ids |
 
 ### <small style="color:red;">(async)</small> Model.save()
 Save the current instance into the database.

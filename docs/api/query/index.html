@@ -257,6 +257,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../model_id/" title="Model_Id" class="md-nav__link">
+      Model_Id
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -401,6 +413,13 @@
           <li class="md-nav__item">
   <a href="#queryfieldselectonly" class="md-nav__link">
     Query.[field].selectOnly()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querylinkedwith" class="md-nav__link">
+    query.linkedWith()
   </a>
   
 </li>
@@ -829,6 +848,13 @@
           <li class="md-nav__item">
   <a href="#queryfieldselectonly" class="md-nav__link">
     Query.[field].selectOnly()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querylinkedwith" class="md-nav__link">
+    query.linkedWith()
   </a>
   
 </li>
@@ -1293,6 +1319,38 @@ Only the <b style="color:#283593">[field]</b> will be part of the output result.
 </code></pre></div>
 
 </details>
+<h3 id="querylinkedwith">query.linkedWith()<a class="headerlink" href="#querylinkedwith" title="Permanent link">&para;</a></h3>
+<p>LinkedWith allow smart query. Ilorm will know the relation between the value and the current Model.
+value could be a Query, a <a href="../model">model instance</a> or a <a href="../model_id">model Id</a>.
+<div class="highlight"><pre><span></span><code><span class="nx">Query</span><span class="p">.</span><span class="nx">linkedWith</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">value</td>
+<td align="center">Model, Query or Model_ID</td>
+<td>the value linked with the given query</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example of linkedWith</summary><div class="highlight"><pre><span></span><code><span class="c1">// Select first unpaid invoice linked with a user with balance &gt; 0</span>
+<span class="kr">const</span> <span class="nx">QUERY_USER_WITH_POSITIVE_BALANCE</span> <span class="o">=</span> <span class="nx">User</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">balance</span><span class="p">.</span><span class="nx">greaterThan</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">invoice</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">Invoices</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">isPaid</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">linkedWith</span><span class="p">(</span><span class="nx">QUERY_USER_WITH_POSITIVE_BALANCE</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">findOne</span><span class="p">();</span>
+</code></pre></div>
+
+</details>
 <h3 id="queryor">query.or()<a class="headerlink" href="#queryor" title="Permanent link">&para;</a></h3>
 <p>Creating branch.
 <div class="highlight"><pre><span></span><code><span class="nx">Query</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">orHandler</span><span class="p">)</span>
@@ -1415,7 +1473,7 @@ Return the number of instance which match the query.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../model/" title="Model" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../model_id/" title="Model_Id" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -1424,7 +1482,7 @@ Return the number of instance which match the query.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Model
+                Model_Id
               </div>
             </div>
           </a>

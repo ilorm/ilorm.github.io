@@ -10,7 +10,7 @@ are defined as attribute of the Query. You can split your query into two things 
 - The query building part : You choose what your query will do.
 - The query run part : You choose the operation to do and execute the query.
 
-## Query building
+## Query building
 Query building are in function of the field of your schema. All method are children of
 attribute defined in your schema.
 
@@ -191,7 +191,31 @@ Query.field.selectOnly();
         .findOne();
     ```
 
-### query.or()
+### query.linkedWith()
+LinkedWith allow smart query. Ilorm will know the relation between the value and the current Model.
+value could be a Query, a [model instance](../model) or a [model Id](../model_id).
+```javascript
+Query.linkedWith(value)
+```
+
+| Parameter        | Type    | Description              |
+|:----------------:|:-------:| ------------------------ |
+| value | Model, Query or Model_ID | the value linked with the given query |
+
+??? example "Example of linkedWith"
+    ```javascript
+    // Select first unpaid invoice linked with a user with balance > 0
+    const QUERY_USER_WITH_POSITIVE_BALANCE = User.query()
+        .balance.greaterThan(0);
+        
+    const invoice = await Invoices.query()
+        .isPaid.is(false)
+        .linkedWith(QUERY_USER_WITH_POSITIVE_BALANCE)
+        .findOne();
+    ```
+
+
+### query.or()
 Creating branch.
 ```javascript
 Query.or(orHandler)
@@ -247,7 +271,7 @@ Query.limit(nbToImpact);
 | nbToImpact | Number | The amount of element to fetch or update or remove. |
 
 
-## Query running
+## Query running
 ### <small style="color:red;">(async)</small> Query.findOne()
 Execute the query, and returns one element which match it.
 

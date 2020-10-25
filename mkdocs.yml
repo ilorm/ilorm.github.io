@@ -5,6 +5,7 @@ nav:
     - API:
         - Core: api/core.md
         - Model: api/model.md
+        - Model_Id: api/model_id.md
         - Query: api/query.md
         - Schema: api/schema.md
         - Field: api/fields.md
