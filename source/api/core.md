@@ -1,4 +1,4 @@
-## Ilorm
+## Ilorm
 Main package documentation.
 ```javascript
 const ilorm = require('ilorm');
@@ -8,11 +8,11 @@ const ilorm = require('ilorm');
 #### Ilorm.Schema
 Use to declare your schema. [See Schema](../schema)
 ```javascript
-const { Schema } = require('ilorm');
+const { Schema } = require('ilorm');
 ```
 
 ### Exported functions
-#### Ilorm.declareModel()
+#### Ilorm.declareModel()
 Declare model is used to change the Model associated with the given name. Could be used
 to define which Class will be instancied in each case.
 
@@ -22,7 +22,7 @@ the resulting class of a newModel call.
 ilorm.declareModel(Model);
 ```
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | Model | [Model](../model) | The Model to associate with the given name. |
 
@@ -58,7 +58,7 @@ const Model = newModel({ name, schema, connector })
 ```
 Return a class [Model](../model) you can use in your project to create new data or query.
 
-| Parameter        | Type    | Default | Description              |
+| Parameter        | Type    | Default | Description              |
 |:----------------:|:-------:|:-------:| ------------------------ |
 | name | String, Symbol | Symbol('model') | The unique name of the model, could be use to [reference](../schemaFields) object. |
 | schema | [Schema](../schema) | none | Specify the schema associated with the given model. |
@@ -100,6 +100,7 @@ Return a class [Model](../model) you can use in your project to create new data 
         connector: mongoConnector,
     });
     ```
-#### Ilorm.use()
+#### Ilorm.use(plugin)
+Declare a plugin to be use by ilorm. This method allows the plugin to overload internal class used by ilorm.
 
 

@@ -26,7 +26,7 @@ const modelInstance = await Model.getById(id);
 ```
 Return the instance associated with the given id.
 
-| Parameter        | Type    | Default | Description              |
+| Parameter        | Type    | Default | Description              |
 |:----------------:|:-------:|:-------:| ------------------------ |
 | id | Mixing |  | The id of the instance to get. |
 

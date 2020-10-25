@@ -22,7 +22,7 @@ Instantiate a new schema object.
 new Schema(schemaDefinition);
 ```
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | schemaDefinition | Object  | An object ; `{ key: SchemaField }` where every key will be the name of the field in the model, and SchemaField the definition of the field. |
 
@@ -98,7 +98,7 @@ Factory to create a [Reference](../schemaFields#schemafieldreference).
 Schema.reference(modelName)
 ```
 
-| Parameter        | Type    | Description              |
+| Parameter        | Type    | Description              |
 |:----------------:|:-------:| ------------------------ |
 | modelName | String  | Specify which model is linked with the given reference. |
 

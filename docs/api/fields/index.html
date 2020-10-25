@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#schemafield" class="md-skip">
+        <a href="#field" class="md-skip">
           Skip to content
         </a>
       
@@ -318,50 +318,78 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#schemafielddefault" class="md-nav__link">
-    SchemaField.default()
+  <a href="#fielddefault" class="md-nav__link">
+    Field.default()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldrequired" class="md-nav__link">
-    SchemaField.required()
+  <a href="#fieldrequired" class="md-nav__link">
+    Field.required()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldboolean" class="md-nav__link">
-    SchemaField/Boolean
+  <a href="#fieldprimary" class="md-nav__link">
+    Field.primary()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafielddate" class="md-nav__link">
-    SchemaField/Date
+  <a href="#fieldreference-referencedmodel-referencedfield" class="md-nav__link">
+    Field.reference({ referencedModel, referencedField, })
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldnumber" class="md-nav__link">
-    SchemaField/Number
+  <a href="#fieldisvalidvalue" class="md-nav__link">
+    Field.isValid(value)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldreference" class="md-nav__link">
-    SchemaField/Reference
+  <a href="#fieldcastvaluevalue" class="md-nav__link">
+    Field.castValue(value)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldstring" class="md-nav__link">
-    SchemaField/String
+  <a href="#fieldboolean" class="md-nav__link">
+    Field/Boolean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fielddate" class="md-nav__link">
+    Field/Date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldnumber" class="md-nav__link">
+    Field/Number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldreference" class="md-nav__link">
+    Field/Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldstring" class="md-nav__link">
+    Field/String
   </a>
   
 </li>
@@ -524,50 +552,78 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#schemafielddefault" class="md-nav__link">
-    SchemaField.default()
+  <a href="#fielddefault" class="md-nav__link">
+    Field.default()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldrequired" class="md-nav__link">
-    SchemaField.required()
+  <a href="#fieldrequired" class="md-nav__link">
+    Field.required()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldboolean" class="md-nav__link">
-    SchemaField/Boolean
+  <a href="#fieldprimary" class="md-nav__link">
+    Field.primary()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafielddate" class="md-nav__link">
-    SchemaField/Date
+  <a href="#fieldreference-referencedmodel-referencedfield" class="md-nav__link">
+    Field.reference({ referencedModel, referencedField, })
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldnumber" class="md-nav__link">
-    SchemaField/Number
+  <a href="#fieldisvalidvalue" class="md-nav__link">
+    Field.isValid(value)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldreference" class="md-nav__link">
-    SchemaField/Reference
+  <a href="#fieldcastvaluevalue" class="md-nav__link">
+    Field.castValue(value)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#schemafieldstring" class="md-nav__link">
-    SchemaField/String
+  <a href="#fieldboolean" class="md-nav__link">
+    Field/Boolean
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fielddate" class="md-nav__link">
+    Field/Date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldnumber" class="md-nav__link">
+    Field/Number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldreference" class="md-nav__link">
+    Field/Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fieldstring" class="md-nav__link">
+    Field/String
   </a>
   
 </li>
@@ -584,7 +640,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ilorm/core/edit/master/docs/api/schemaFields.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ilorm/core/edit/master/docs/api/fields.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -592,13 +648,14 @@
                   
                 
                 
-                <h1 id="schemafield">SchemaField<a class="headerlink" href="#schemafield" title="Permanent link">&para;</a></h1>
-<p>SchemaField is a class used to define the behavior of your fields. Every field type
-are children of the SchemaField class. The SchemaField class is an abstract class.
-You can create your own custom field by inheritance with SchemaField.</p>
-<h3 id="schemafielddefault">SchemaField.default()<a class="headerlink" href="#schemafielddefault" title="Permanent link">&para;</a></h3>
-<p>Specify the default value of the field, if no value are provided.
-<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SchemaField</span><span class="p">();</span>
+                <h1 id="field">Field<a class="headerlink" href="#field" title="Permanent link">&para;</a></h1>
+<p>Field is a class used to define the behavior of your fields. Every field type
+are children of the Field class. The Field class is an abstract class.
+You can create your own custom field by inheritance with Field.</p>
+<h3 id="fielddefault">Field.default()<a class="headerlink" href="#fielddefault" title="Permanent link">&para;</a></h3>
+<p>Specify the default value of a field. Any instance bound with the default field will be initialized with the default
+value. If a function is specified, the function will be invoked and the result of it will be used as default value.
+<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Field</span><span class="p">();</span>
 
 <span class="nx">field</span><span class="p">.</span><span class="k">default</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
 </code></pre></div></p>
@@ -606,7 +663,7 @@ You can create your own custom field by inheritance with SchemaField.</p>
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -626,14 +683,15 @@ You can create your own custom field by inheritance with SchemaField.</p>
   <span class="nx">lastName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
   <span class="nx">birthday</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">date</span><span class="p">(),</span>
   <span class="nx">weight</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">number</span><span class="p">(),</span>
-<span class="hll">  <span class="nx">isLogged</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="kr">boolean</span><span class="p">().</span><span class="k">default</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">required</span><span class="p">(),</span>
-</span><span class="p">});</span>
+<span class="hll">  <span class="nx">createdAt</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">date</span><span class="p">().</span><span class="k">default</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">),</span>
+</span>  <span class="nx">isLogged</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="kr">boolean</span><span class="p">().</span><span class="k">default</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="nx">required</span><span class="p">(),</span>
+<span class="p">});</span>
 </code></pre></div></p>
 </details>
-<h3 id="schemafieldrequired">SchemaField.required()<a class="headerlink" href="#schemafieldrequired" title="Permanent link">&para;</a></h3>
-<p>Specify the field as required. A required field is mandatory to be save.
-An instance without mandatory field throw error.
-<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SchemaField</span><span class="p">();</span>
+<h3 id="fieldrequired">Field.required()<a class="headerlink" href="#fieldrequired" title="Permanent link">&para;</a></h3>
+<p>Specify the field as required. A required field is mandatory to be saved.
+An instance with unsetted mandatory field will throw an error if save is called.
+<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">field</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Field</span><span class="p">();</span>
 
 <span class="nx">field</span><span class="p">.</span><span class="nx">required</span><span class="p">(</span><span class="nx">isRequired</span> <span class="o">=</span> <span class="kc">true</span><span class="p">);</span>
 </code></pre></div></p>
@@ -641,7 +699,7 @@ An instance without mandatory field throw error.
 <thead>
 <tr>
 <th align="center">Parameter</th>
-<th align="center"> Type</th>
+<th align="center">Type</th>
 <th align="center">Default</th>
 <th>Description</th>
 </tr>
@@ -669,15 +727,111 @@ you change the required status.</p>
 </span><span class="p">});</span>
 </code></pre></div></p>
 </details>
-<h2 id="schemafieldboolean">SchemaField/Boolean<a class="headerlink" href="#schemafieldboolean" title="Permanent link">&para;</a></h2>
+<h3 id="fieldprimary">Field.primary()<a class="headerlink" href="#fieldprimary" title="Permanent link">&para;</a></h3>
+<p>Define this field as a primary key of the linked Schema.</p>
+<details class="example"><summary>Example of primary</summary><p>Basic example of what a schema "user" could look like :
+<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">userSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
+<span class="hll">  <span class="nx">userId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">primary</span><span class="p">()</span>
+</span><span class="hll">  <span class="nx">firstName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+</span>  <span class="nx">lastName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+<span class="p">});</span>
+</code></pre></div></p>
+</details>
+<h3 id="fieldreference-referencedmodel-referencedfield">Field.reference({ referencedModel, referencedField, })<a class="headerlink" href="#fieldreference-referencedmodel-referencedfield" title="Permanent link">&para;</a></h3>
+<p>Define a reference between the given schema and another schema.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">referencedModel</td>
+<td align="center">String</td>
+<td>The model referenced by the field</td>
+</tr>
+<tr>
+<td align="center">referencedField</td>
+<td align="center">String</td>
+<td>The field in the referenced model referenced by the field</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example of reference</summary><p>Invoice.customerId reference Customers id
+<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">invoiceSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
+<span class="hll">  <span class="nx">invoiceId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">primary</span><span class="p">()</span>
+</span><span class="hll">  <span class="nx">customerId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">().</span><span class="nx">reference</span><span class="p">({</span>
+</span>    <span class="nx">referencedModel</span><span class="o">:</span> <span class="s1">&#39;customers&#39;</span><span class="p">,</span>
+    <span class="nx">referencedField</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+<span class="hll">  <span class="p">}),</span>
+</span>  <span class="nx">amount</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">amount</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+<span class="p">});</span>
+</code></pre></div></p>
+</details>
+<h3 id="fieldisvalidvalue">Field.isValid(value)<a class="headerlink" href="#fieldisvalidvalue" title="Permanent link">&para;</a></h3>
+<p>Check if value is "valid" and could be used as value for the field.
+For example, an undefined value is invalid for a required field.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">value</td>
+<td align="center">Mixed</td>
+<td>The value to check.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fieldcastvaluevalue">Field.castValue(value)<a class="headerlink" href="#fieldcastvaluevalue" title="Permanent link">&para;</a></h3>
+<p>Cast the value with the given field. Using internally everytime we set a value in the field.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th align="center">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">value</td>
+<td align="center">Mixed</td>
+<td>The value to check.</td>
+</tr>
+</tbody>
+</table>
+<details class="example"><summary>Example of castValue</summary><div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">SchemaNumber</span> <span class="o">=</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">number</span><span class="p">();</span>
+<span class="hll">
+</span><span class="hll"><span class="kr">const</span> <span class="nx">resultCast</span> <span class="o">=</span> <span class="nx">SchemaNumber</span><span class="p">.</span><span class="nx">castValue</span><span class="p">(</span><span class="s1">&#39;33&#39;</span><span class="p">);</span>
+</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">resultCast</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">a</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">);</span>
+<span class="hll"><span class="nx">expect</span><span class="p">(</span><span class="nx">resultCase</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
+</span></code></pre></div>
+
+</details>
+<h2 id="fieldboolean">Field/Boolean<a class="headerlink" href="#fieldboolean" title="Permanent link">&para;</a></h2>
 <p>Define the field as boolean.</p>
-<h2 id="schemafielddate">SchemaField/Date<a class="headerlink" href="#schemafielddate" title="Permanent link">&para;</a></h2>
+<h2 id="fielddate">Field/Date<a class="headerlink" href="#fielddate" title="Permanent link">&para;</a></h2>
 <p>Define the field as date.</p>
-<h2 id="schemafieldnumber">SchemaField/Number<a class="headerlink" href="#schemafieldnumber" title="Permanent link">&para;</a></h2>
+<h2 id="fieldnumber">Field/Number<a class="headerlink" href="#fieldnumber" title="Permanent link">&para;</a></h2>
 <p>Define the field as number.</p>
-<h2 id="schemafieldreference">SchemaField/Reference<a class="headerlink" href="#schemafieldreference" title="Permanent link">&para;</a></h2>
+<h2 id="fieldreference">Field/Reference<a class="headerlink" href="#fieldreference" title="Permanent link">&para;</a></h2>
 <p>Define the field as reference.</p>
-<h2 id="schemafieldstring">SchemaField/String<a class="headerlink" href="#schemafieldstring" title="Permanent link">&para;</a></h2>
+<h2 id="fieldstring">Field/String<a class="headerlink" href="#fieldstring" title="Permanent link">&para;</a></h2>
 <p>Define the field as string.</p>
                 
               
