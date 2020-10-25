@@ -66,7 +66,7 @@ Define this field as a primary key of the linked Schema.
 
 ??? example "Example of primary"
     Basic example of what a schema "user" could look like :
-    ```javascript hl_lines="4 5 8"
+    ```javascript hl_lines="4"
     const { Schema } = require('ilorm');
     
     const userSchema = new Schema({
@@ -86,7 +86,7 @@ Define a reference between the given schema and another schema.
 
 ??? example "Example of reference"
     Invoice.customerId reference Customers id
-    ```javascript hl_lines="4 5 8"
+    ```javascript hl_lines="5 6 7 8"
     const { Schema } = require('ilorm');
     
     const invoiceSchema = new Schema({
@@ -115,7 +115,7 @@ Cast the value with the given field. Using internally everytime we set a value i
 | value | Mixed  | The value to check. |
 
 ??? example "Example of castValue"
-    ```javascript hl_lines="4 5 8"
+    ```javascript
     const { Schema } = require('ilorm');
     
     const SchemaNumber = Schema.number();

@@ -15,7 +15,7 @@
     
     
       
-        <title>Schema Field - Ilorm documentation</title>
+        <title>Field - Ilorm documentation</title>
       
     
     
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Schema Field
+              Field
             
           </span>
         </div>
@@ -292,14 +292,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Schema Field
+        Field
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="Schema Field" class="md-nav__link md-nav__link--active">
-      Schema Field
+    <a href="./" title="Field" class="md-nav__link md-nav__link--active">
+      Field
     </a>
     
       
@@ -734,8 +734,8 @@ you change the required status.</p>
 
 <span class="kr">const</span> <span class="nx">userSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
 <span class="hll">  <span class="nx">userId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">primary</span><span class="p">()</span>
-</span><span class="hll">  <span class="nx">firstName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
-</span>  <span class="nx">lastName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+</span>  <span class="nx">firstName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+  <span class="nx">lastName</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
 <span class="p">});</span>
 </code></pre></div></p>
 </details>
@@ -766,11 +766,11 @@ you change the required status.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">invoiceSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
-<span class="hll">  <span class="nx">invoiceId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">primary</span><span class="p">()</span>
-</span><span class="hll">  <span class="nx">customerId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">().</span><span class="nx">reference</span><span class="p">({</span>
-</span>    <span class="nx">referencedModel</span><span class="o">:</span> <span class="s1">&#39;customers&#39;</span><span class="p">,</span>
-    <span class="nx">referencedField</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
-<span class="hll">  <span class="p">}),</span>
+  <span class="nx">invoiceId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">primary</span><span class="p">()</span>
+<span class="hll">  <span class="nx">customerId</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">().</span><span class="nx">reference</span><span class="p">({</span>
+</span><span class="hll">    <span class="nx">referencedModel</span><span class="o">:</span> <span class="s1">&#39;customers&#39;</span><span class="p">,</span>
+</span><span class="hll">    <span class="nx">referencedField</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="p">}),</span>
 </span>  <span class="nx">amount</span><span class="o">:</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">amount</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
 <span class="p">});</span>
 </code></pre></div></p>
@@ -815,12 +815,12 @@ For example, an undefined value is invalid for a required field.</p>
 <details class="example"><summary>Example of castValue</summary><div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="p">{</span> <span class="nx">Schema</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ilorm&#39;</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">SchemaNumber</span> <span class="o">=</span> <span class="nx">Schema</span><span class="p">.</span><span class="nx">number</span><span class="p">();</span>
-<span class="hll">
-</span><span class="hll"><span class="kr">const</span> <span class="nx">resultCast</span> <span class="o">=</span> <span class="nx">SchemaNumber</span><span class="p">.</span><span class="nx">castValue</span><span class="p">(</span><span class="s1">&#39;33&#39;</span><span class="p">);</span>
-</span>
+
+<span class="kr">const</span> <span class="nx">resultCast</span> <span class="o">=</span> <span class="nx">SchemaNumber</span><span class="p">.</span><span class="nx">castValue</span><span class="p">(</span><span class="s1">&#39;33&#39;</span><span class="p">);</span>
+
 <span class="nx">expect</span><span class="p">(</span><span class="nx">resultCast</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">a</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">);</span>
-<span class="hll"><span class="nx">expect</span><span class="p">(</span><span class="nx">resultCase</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
-</span></code></pre></div>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">resultCase</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">be</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
+</code></pre></div>
 
 </details>
 <h2 id="fieldboolean">Field/Boolean<a class="headerlink" href="#fieldboolean" title="Permanent link">&para;</a></h2>
