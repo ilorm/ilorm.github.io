@@ -1,11 +1,273 @@
 <html>
 <head>
     <title>Ilorm</title>
+    <!-- JQuery -->
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-    <meta http-equiv="refresh" content="0; URL=https://ilorm.github.io/docs">
+    <!-- Prism.js => Syntax highlighter -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-css.min.js" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/plugins/autolinker/prism-autolinker.min.js"></script>
+    <style>
+        pre {
+            padding: 20px;
+        }
+        .language-js {
+            background-color: #f5f5f5;
+            color: #ec407a;
+        }
+        .language-js .string {
+            color: #0d904f;
+        }
+        .language-js .keyword {
+            color: #3e61a2;
+        }
+        .language-js .punctuation {
+            color: #000;
+        }
+        .language-js .operator {
+            color: #000;
+        }
+        .language-js .comment {
+            color: #999;
+        }
+        #sect1 {
+            padding: 50px 0px;
+        }
+        #sect2 {
+            padding: 50px 0px;
+            background-color: #F0F8FF;
+        }
+        #sect3 {
+            padding: 50px 0px;
+        }
+    </style>
+    <script>
+        var codes = [
+          'const { Schema, } = require(\'ilorm\');\n' +
+          '\n' +
+          'const invoiceSchema = new Schema({\n' +
+          '  id: Schema.string().primary().default(() => uuid()), // primary key\n' +
+          '  customerId: Schema.string().reference({ // Create a relation between two model\n' +
+          '    referencedModel: \'customers\',\n' +
+          '    referencedField: \'id\',\n' +
+          '  }), \n' +
+          '  createdAt: Schema.date().default(() => Date.now()),\n' +
+          '  amount: Schema.number(),\n' +
+          '  isPaid: Schema.boolean().default(false)\n' +
+          '});',
+          'const { newModel, } = require(\'ilorm\');\n' +
+          '\n' +
+          'const modelConfig = {\n' +
+          '  name: \'invoices\', // Optional, force the model name\n' +
+          '  schema: invoiceSchema, // Schema bound with the model\n' +
+          '  connector: invoiceConnector, // Connection to your data source\n' +
+          '}\n' +
+          '\n' +
+          'const Invoice = newModel(modelConfig); // Invoice is a class',
+          '// Find the first unpaid invoice created after January 1st 2017;\n\n' +
+          'const invoice = await Invoice.query()\n' +
+          '    .createdAt.greatherThan(new Date(\'2017-01-01\'))\n' +
+          '    .isPaid.is(false)\n' +
+          '    .findOne();',
+          '// linkedWith operator allow you to make "human readable" query; \n' +
+          '// In this example, we want to Find all customers with no money on their account \n' +
+          '// And with unpaid invoices;\n\n' +
+          'const customers = await Customers.query()\n' +
+          '  .linkedWith(\n' +
+          '    Accounts.query()\n' +
+          '      .balance.is(0)\n' +
+          '  )\n' +
+          '  .linkedWith(\n' +
+          '    Invoices.query()\n' +
+          '      .isPaid.is(false)\n' +
+          '  )\n' +
+          '  .find();',
+          '// You can easily manipulate instances;\n\n' +
+          'const invoice = new Invoice();\n' +
+          'await invoice.save(); // INSERT instance \n\n' +
+          'invoice.isPaid = true;\n' +
+          'await invoice.save(); // UPDATE instance\n\n' +
+          'await invoice.remove(); // DELETE instance\n' +
+          '',
+          '// Transaction class allow you to create safe transactional context;\n' +
+          '// In this example, we load one invoice from database to "paid" it.\n' +
+          '// Of course, only if customer have money on their account.\n\n' +
+          'const { Transaction, } = require(\'ilorm\');\n\n' +
+          'Transaction.run(async () => {\n' +
+          '  // Every ilorm query done here, are managed by the transaction;\n' +
+          '  const invoice = await Invoice.query()\n' +
+          '    .id.is(invoiceId)\n' +
+          '    .findOne();\n' +
+          '\n' +
+          '  const userAccount = await Account.query()\n' +
+          '    .userId.is(invoice.userId)\n' +
+          '    .findOne();\n' +
+          '\n' +
+          '  if (userAccount.balance >= invoice.amount) {\n' +
+          '    invoice.isPaid = true;\n' +
+          '    userAccount.balance -= invoice.amount;\n' +
+          '    await Promise.all([\n' +
+          '      invoice.save(),\n' +
+          '      userAccount.save(),\n' +
+          '    ]);\n' +
+          '  }\n' +
+          '});'
+        ];
+
+        function selectCode(elem, codeIndex) {
+          $('.list-group-item').removeClass('active');
+          $('.dropdown-item').removeClass('active');
+          $(elem).addClass('active');
+          $(elem).addClass('active');
+          $('code').text(codes[codeIndex]);
+          $('.dropdown-toggle').text($(elem).text());
+          Prism.highlightAll();
+        }
+    </script>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Ilorm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/docs">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/ilorm/core">Github</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div  id="sect1">
+    <div class="container">
+        <p>
+            Ilorm is a new generation ORM for NodeJS.
+        </p>
+        <a type="button" class="btn btn-primary btn-lg" href="/docs">Explore documentation</a>
+        <a type="button" class="btn btn-outline-primary btn-lg" href="https://github.com/ilorm/core/blob/master/CONTRIBUTING.md">Contribute</a>
+    </div>
+    </div>
+    <div id="sect2">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h4 class="text-center">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-shift" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7.27 2.047a1 1 0 0 1 1.46 0l6.345 6.77c.6.638.146 1.683-.73 1.683H11.5v3a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-3H1.654C.78 10.5.326 9.455.924 8.816L7.27 2.047zM14.346 9.5L8 2.731 1.654 9.5H4.5a1 1 0 0 1 1 1v3h5v-3a1 1 0 0 1 1-1h2.846z"/>
+                    </svg><br/>
+                    Modern javascript
+                </h4>
+                <p style="padding: 5px;">
+                    Clean API build upon modern javascript features.
+                </p>
+            </div>
+            <div class="col-sm">
+                <h4 class="text-center">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hdd-rack" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M14 10H2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
+                        <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                        <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        <path fill-rule="evenodd" d="M3 9V7h1v2H3zm9 0V7h1v2h-1z"/>
+                    </svg><br/>
+                    Database agnostic
+                </h4>
+                <p style="padding: 5px;">
+                    Connect your project to any data source.
+                    Currently supporting MongoDB, Postgres, MSSQL, MySQL, MariaDB, SQLite3, Oracle, and Amazon Redshift.
+                </p>
+            </div>
+            <div class="col-sm">
+                <h4 class="text-center">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lightning" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+                    </svg><br/>
+                    Highly customizable
+                </h4>
+                <p style="padding: 5px;">
+                    The whole project is designated to allow plugins. Create your owns plugins or use the community one.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="sect3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md d-md-none">
+                <div class="btn-group btn-block" style="margin-bottom: 10px;">
+                    <button type="button" class="btn btn-primary btn-lg btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Schema declaration
+                    </button>
+                    <div class="dropdown-menu">
+                        <a onclick="selectCode(this, 0);" href="#sect3" class="dropdown-item active">Schema declaration</a>
+                        <a onclick="selectCode(this, 1);" href="#sect3" class="dropdown-item">Model declaration</a>
+                        <a onclick="selectCode(this, 2);" href="#sect3" class="dropdown-item">Query builder</a>
+                        <a onclick="selectCode(this, 3);" href="#sect3" class="dropdown-item">Smart query</a>
+                        <a onclick="selectCode(this, 4);" href="#sect3" class="dropdown-item">Instance manipulation</a>
+                        <a onclick="selectCode(this, 5);" href="#sect3" class="dropdown-item">Transaction</a>
+                        <a href="#" class="dropdown-item disabled" tabindex="-1" aria-disabled="true">
+                            Database migration
+                            <span class="badge badge-secondary float-right">Coming soon</span>
+                        </a>
+                        <a href="#" class="dropdown-item disabled" tabindex="-1" aria-disabled="true">
+                            Aggregation query
+                            <span class="badge badge-secondary float-right">Coming soon</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 console">
+                <pre><code class="language-js"></code></pre>
+            </div>
+            <div class="col-md d-none d-md-block">
+                <div class="list-group">
+                    <a onclick="selectCode(this, 0);" href="#" class="list-group-item list-group-item-action active">Schema declaration</a>
+                    <a onclick="selectCode(this, 1);" href="#" class="list-group-item list-group-item-action">Model declaration</a>
+                    <a onclick="selectCode(this, 2);" href="#" class="list-group-item list-group-item-action">Query builder</a>
+                    <a onclick="selectCode(this, 3);" href="#" class="list-group-item list-group-item-action">Smart query</a>
+                    <a onclick="selectCode(this, 4);" href="#" class="list-group-item list-group-item-action">Instance manipulation</a>
+                    <a onclick="selectCode(this, 5);" href="#" class="list-group-item list-group-item-action">Transaction</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
+                        Database migration
+                        <span class="badge badge-secondary float-right">Coming soon</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
+                        Aggregation query
+                        <span class="badge badge-secondary float-right">Coming soon</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">
+                Ilorm code licensed <a href="https://github.com/ilorm/core/blob/master/LICENSE">MIT</a>.<br/>
+                Website built using <a href="https://getbootstrap.com/">Bootstrap</a>.
+            </span>
+        </div>
+    </footer>
+    <script>
+      $('code').text(codes[0]);
+      Prism.highlightAll();
+    </script>
 </body>
 
 </html>
