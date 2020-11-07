@@ -305,9 +305,39 @@ const numberOfInstance = await query.count();
 Return the number of instance which match the query.
 
 ### <small style="color:red;">(async)</small> Query.updateOne()
+Update the first element matching the query.
+
+```javascript
+// Set isPaid flag to true on the invoice with id INVOICE_ID;
+await Invoices.query()
+    .id.is(INVOICE_ID)
+    .isPaid.set(true)
+    .updateOne();
+```
 
 ### <small style="color:red;">(async)</small> Query.update()
+Execute an update targeting all element matching the query.
+```javascript
+// Change invoices owner
+await Invoices.query()
+    .ownerId.is(OLD_OWNER)
+    .ownerId.set(NEW_OWNER)
+    .update();
+```
 
 ### <small style="color:red;">(async)</small> Query.removeOne()
+Remove the first element matching the query.
+```javascript
+// Remove randomly one invoice;
+await Invoices.query()
+    .removeOne();
+```
 
 ### <small style="color:red;">(async)</small> Query.remove()
+Remove all elements matching the query
+```javascript
+// Remove all paid invoices;
+await Invoices.query()
+    .isPaid.is(true)
+    .remove();
+```

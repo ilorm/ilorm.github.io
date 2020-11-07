@@ -1464,9 +1464,35 @@ Return a stream containing all elements matching the query.</p>
 </code></pre></div>
 Return the number of instance which match the query.</p>
 <h3 id="async-queryupdateone"><small style="color:red;">(async)</small> Query.updateOne()<a class="headerlink" href="#async-queryupdateone" title="Permanent link">&para;</a></h3>
+<p>Update the first element matching the query.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Set isPaid flag to true on the invoice with id INVOICE_ID;</span>
+<span class="nx">await</span> <span class="nx">Invoices</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="nx">INVOICE_ID</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">isPaid</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">updateOne</span><span class="p">();</span>
+</code></pre></div>
+
 <h3 id="async-queryupdate"><small style="color:red;">(async)</small> Query.update()<a class="headerlink" href="#async-queryupdate" title="Permanent link">&para;</a></h3>
+<p>Execute an update targeting all element matching the query.
+<div class="highlight"><pre><span></span><code><span class="c1">// Change invoices owner</span>
+<span class="nx">await</span> <span class="nx">Invoices</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">ownerId</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="nx">OLD_OWNER</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">ownerId</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">NEW_OWNER</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+</code></pre></div></p>
 <h3 id="async-queryremoveone"><small style="color:red;">(async)</small> Query.removeOne()<a class="headerlink" href="#async-queryremoveone" title="Permanent link">&para;</a></h3>
+<p>Remove the first element matching the query.
+<div class="highlight"><pre><span></span><code><span class="c1">// Remove randomly one invoice;</span>
+<span class="nx">await</span> <span class="nx">Invoices</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">removeOne</span><span class="p">();</span>
+</code></pre></div></p>
 <h3 id="async-queryremove"><small style="color:red;">(async)</small> Query.remove()<a class="headerlink" href="#async-queryremove" title="Permanent link">&para;</a></h3>
+<p>Remove all elements matching the query
+<div class="highlight"><pre><span></span><code><span class="c1">// Remove all paid invoices;</span>
+<span class="nx">await</span> <span class="nx">Invoices</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">isPaid</span><span class="p">.</span><span class="nx">is</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+</code></pre></div></p>
                 
               
               
